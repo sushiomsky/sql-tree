@@ -1,0 +1,21 @@
+{
+    "name": "suchomsky/Xml2Sql",
+    "description": "store a xml file into a nested sets sql table",
+    "license": "GPL",
+    "keywords": ["xml"],["sql"],
+    "authors": [
+        {
+            "name": "Dennis Suchomsky",
+            "email": "dennis.suchomsky@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "4.0.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Suchomsky\\Xml2Sql\\": "src"
+        }
+    }
+}
