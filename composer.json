@@ -1,5 +1,5 @@
 {
-    "name": "suchomsky/Xml2Sql",
+    "name": "suchomsky/SqlTree",
     "description": "store a xml file into a nested sets sql table",
     "license": "GPL",
     "keywords": ["xml"],["sql"],
