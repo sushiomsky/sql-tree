@@ -28,12 +28,18 @@ class SqlTree {
 	 * @var arrray $columns table and column names
 	 */
 	private $columns = null;
-	
+
 	/**
 	 *
 	 * @var array $statements pdo prepared statements
 	 */
 	private $statements = null;
+
+	/**
+	 *
+	 * @var array $nodePointer stack of node id's last element is the id of the last node inserted
+	 */
+	private $nodePointer = array(0 => 0);
 	
 	/**
 	 *
@@ -62,6 +68,30 @@ class SqlTree {
 			print "Error!: " . $e->getMessage ();
 			$this->closeConnection ();
 		}
+	}
+	
+	/**
+	 * Add a node at current position
+	 * @param String $name Nodename
+	 */
+	public function addNode($name){
+		
+	}
+	
+	/**
+	 * Add a Subnode at current position
+	 * @param String $name Nodename
+	 */
+	public function addSubNode($name){
+	
+	}
+	
+	/**
+	 * Add a root node
+	 * @param String $name Nodename
+	 */
+	public function addRootNode($name){
+	
 	}
 	
 	/**
