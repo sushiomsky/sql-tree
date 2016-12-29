@@ -74,7 +74,18 @@ class SqlTree {
 			$this->closeConnection ();
 		}
 	}
-	
+
+	/**
+	 * Get a node by id
+	 * @param integer $id sql table row id
+	 */
+	private function getNodeById($id){
+		$this->statements['select_where_id']->bindParam(':value_id',$id);
+		$this->statements['select_where_id']->execute();
+		return $this->statements['select_where_id']->fetch ( PDO::FETCH_ASSOC );
+		
+	}
+
 	/**
 	 * Add a node at current position at the same level as current node
 	 * @param String $name Nodename
@@ -88,16 +99,11 @@ class SqlTree {
 	 * @param String $name Nodename
 	 */
 	protected function insertSubNode($name){
-		$this->statements['select_where_id']->bindParam(':value_id',$this->nodePointer[sizeof($this->nodePointer)-1]);
-		$this->statements['select_where_id']->execute();
-		$parent = $this->statements['select_where_id']->fetch ( PDO::FETCH_ASSOC );
+		$parent = $this->getNodeById($this->nodePointer[sizeof($this->nodePointer)-1]);
 		
-		// update all $parent's set $rgt +2 WHERE rgt >= $RGT;
 		$this->statements['update_parents_lft']->execute();
 		$this->statements['update_parents_lgt']->execute();
 			
-		// $lft is $parent's $rgt
-		// $rgt is $parents's $rgt + 1
 		$right = $parent[$this->columns ['rgt']] + 1;
 		$this->statements['insert_node']->bindValue( ":value_lft", $parent [$this->columns ['rgt']], PDO::PARAM_INT );
 		$this->statements['insert_node']->bindValue( ":value_rgt", $parent [$this->columns ['rgt']]+1, PDO::PARAM_INT );

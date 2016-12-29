@@ -1,9 +1,7 @@
 <?php
-use Suchomsky\SqlTree\SqlTree;
-
 /**
  * class: TreeAdapter
- * purpose: 
+ * purpose: batch processing & transaction handling
  * Focus: Data/tree consistency
  * 
  * @copyright Copyright (C) 2001-2016 Webschreinerei
@@ -11,6 +9,8 @@ use Suchomsky\SqlTree\SqlTree;
  * @license GPL
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  */
+use Suchomsky\SqlTree\SqlTree;
+
 class TreeAdapter extends SqlTree 
 {
 	function __construct($dbCreds, $columns) {
