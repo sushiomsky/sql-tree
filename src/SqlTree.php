@@ -6,7 +6,7 @@
  *
  * @copyright Copyright (C) 2001-2016 Webschreinerei
  * @author Dennis Suchomsky dennis.suchomsky@gmail.com
- * @link https://sushiomsky.github.io/SqlTree/
+ * @link https://github.com/sushiomsky/SqlTree
  * @license GPL3
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  */
