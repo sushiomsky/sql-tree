@@ -27,8 +27,9 @@
 	},
 	"scripts": {
 		"post-update-cmd": [
-			"php vendor/bin/sniff src/",
-			"php phpDocumentor.phar -d . -t docs"
+			"vendor/bin/sniff src/",
+			"rm -rf docs/*",
+			"vendor/bin/phpdoc -d ./src -t ./docs"
 		],
 		"post-package-install": [
 			""
