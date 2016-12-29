@@ -28,11 +28,7 @@ class SqlTree {
 	 */
 	private $pdo = null;
 
-	/**
-	 * @var mixed[]|null table and column names
-	 */
-	private $columns = null;
-
+	
 	/**
 	 * @var array|null pdo prepared statements
 	 */
@@ -44,40 +40,68 @@ class SqlTree {
 	private $nodePointer = null;
 
 	/**
+	 * @var array|null error messages
+	 */
+	private $errors = null;
+
+	/**
 	 * @var array QUERYS Sql querys nescessary to manage the tree structure
 	 */
-	const QUERYS = [
+	const QUERYS = array(
 			'SELECT_WHERE_ID' => 'SELECT :id, :rgt, :lft, :parent, :name FROM :table WHERE :id=:value_id LIMIT 0,1',
 			'SELECT_TOP_RGT' => 'SELECT :rgt FROM :table ORDER BY :rgt DESC LIMIT 0,1',
 			'UPDATE_PARENTS_RGT' => 'UPDATE :table SET :rgt = :rgt +2 WHERE :rgt >= :value_rgt',
 			'UPDATE_PARENTS_LFT' => 'UPDATE :table SET :lft = :lft +2 WHERE :lft >= :value_lft',
 			'INSERT_NODE' => 'INSERT INTO :table (:lft, :rgt, :parent, :name) VALUES(:value_lft, :value_rgt, :value_parent, :value_name)'
-	];
-
+	);
+	
+	/**
+	 * @var mixed[] default table and column names
+	 */
+	const COLUMNS = array(
+			'table' => 'nested_set',
+			'id' => 'id',
+			'lft' => 'lft',
+			'rgt' => 'rgt',
+			'parent' => 'parent');
+	
 	/**
 	 * Connects to the database and checks for valid column names
 	 *
 	 * @param array $dbCreds
 	 * @param array $columns
 	 */
-	public function __construct($dbCreds, $columns) {
+	public function __construct($pdo, $columns = NULL)
+	{
+		if ($columns == NULL) {
+			$this->columns = \Suchomsky\SqlTree\SqlTree::COLUMNS;
+		}
 		try {
-			$this->pdo = new PDO ( 'mysql:host=' . $dbCreds['host'] . ';dbname=' . $dbCreds['db'], $dbCreds['user'], $dbCreds['password'] );
-			$this->columns = $columns;
-			$this->prepareStatements ();
+			$this->pdo = $pdo;
+			$this->prepareStatements();
+			$this->pdo->beginTransaction();
 		} catch (PDOException $e) {
-			print 'Error!: ' . $e->getMessage ();
+			$this->errors[] = $e->getMessage ();
 			$this->closeConnection ();
 		}
 	}
 
+	public static function connectDb($dbCreds) {
+		try {
+			$pdo = new \PDO( 'mysql:host=' . $dbCreds['host'] . ';dbname=' . $dbCreds['db'], $dbCreds['user'], $dbCreds['password'] );
+		} catch (\PDOException $e) {
+			$pdo = null;
+		}
+		return $pdo;
+	}
+	
 	/**
 	 * Get a node by id
 	 *
 	 * @param int $id sql table row id
 	 * @return mixed[]
 	 */
-	private function getNodeById($id){
+	public function getNodeById($id){
 		$this->statements['select_where_id']->bindParam(':value_id', $id);
 		$this->statements['select_where_id']->execute();
 		return $this->statements['select_where_id']->fetch ( PDO::FETCH_ASSOC );
@@ -90,7 +114,17 @@ class SqlTree {
 	 * @return void
 	 */
 	protected function insertNode($name){
+		$neighbour = $this->getNodeById($this->nodePointer[count($this->nodePointer) - 1]);
 
+		$this->statements['update_parents_lft']->execute();
+		$this->statements['update_parents_lgt']->execute();
+
+		$this->statements['insert_node']->bindValue( ':value_lft', $neighbour[$this->columns['rgt']] + 1, PDO::PARAM_INT );
+		$this->statements['insert_node']->bindValue( ':value_rgt', $neighbour[$this->columns['rgt']] + 2, PDO::PARAM_INT );
+		$this->statements['insert_node']->bindParam( ':value_name', $name, PDO::PARAM_STR );
+		$this->statements['insert_node']->bindValue( ':value_parent', $neighbour[$this->columns['parent']], PDO::PARAM_INT );
+		$this->statements['insert_node']->execute ();
+		$this->nodePointer[] = $this->pdo->lastInsertId ();
 	}
 
 	/**
@@ -105,7 +139,6 @@ class SqlTree {
 		$this->statements['update_parents_lft']->execute();
 		$this->statements['update_parents_lgt']->execute();
 
-		$right = $parent[$this->columns['rgt']] + 1;
 		$this->statements['insert_node']->bindValue( ':value_lft', $parent[$this->columns['rgt']], PDO::PARAM_INT );
 		$this->statements['insert_node']->bindValue( ':value_rgt', $parent[$this->columns['rgt']] + 1, PDO::PARAM_INT );
 		$this->statements['insert_node']->bindParam( ':value_name', $name, PDO::PARAM_STR );
@@ -139,25 +172,25 @@ class SqlTree {
 	 * @return void
 	 */
 	private function prepareStatements() {
-		$keys = array_keys ( QUERYS );
+		$keys = array_keys ( self::QUERYS );
 		foreach ($keys as $key) {
 			$loKey = strtolower ( $key );
-			$this->statements[$loKey] = $this->pdo->prepare ( QUERYS[$key] );
+			$this->statements[$loKey] = $this->pdo->prepare ( self::QUERYS[$key] );
 
 			$this->statements[$loKey]->bindParam(':table', $this->columns['table']);
-			if (strpos(QUERYS[$key], ':id') !== false) {
+			if (strpos(self::QUERYS[$key], ':id') !== false) {
 				$this->statements[$loKey]->bindParam(':id', $this->columns['id']);
 			}
-			if (strpos(QUERYS[$key], ':lft') !== false) {
+			if (strpos(self::QUERYS[$key], ':lft') !== false) {
 				$this->statements[$loKey]->bindParam(':lft', $this->columns['lft']);
 			}
-			if (strpos(QUERYS[$key], ':rgt') !== false) {
+			if (strpos(self::QUERYS[$key], ':rgt') !== false) {
 				$this->statements[$loKey]->bindParam(':rgt', $this->columns['rgt']);
 			}
-			if (strpos(QUERYS[$key], ':parent') !== false) {
+			if (strpos(self::QUERYS[$key], ':parent') !== false) {
 				$this->statements[$loKey]->bindParam(':parent', $this->columns['parent']);
 			}
-			if (strpos(QUERYS[$key], ':name') !== false) {
+			if (strpos(self::QUERYS[$key], ':name') !== false) {
 				$this->statements[$loKey]->bindParam(':name', $this->columns['name']);
 			}
 		}
@@ -178,6 +211,9 @@ class SqlTree {
 	 * @return void
 	 */
 	private function closeConnection() {
+		if (count($this->errors) > 0) {
+			$this->pdo->rollBack();
+		}
 		$this->pdo = null;
 	}
 

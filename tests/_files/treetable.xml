@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="sqltree">
+	<table_data name="nested_set">
+	<row>
+		<field name="id">1</field>
+		<field name="lft">1</field>
+		<field name="rgt">10</field>
+		<field name="name">rootnode</field>
+		<field name="parent">0</field>
+	</row>
+	<row>
+		<field name="id">2</field>
+		<field name="lft">2</field>
+		<field name="rgt">7</field>
+		<field name="name">childnode</field>
+		<field name="parent">1</field>
+	</row>
+	<row>
+		<field name="id">3</field>
+		<field name="lft">3</field>
+		<field name="rgt">4</field>
+		<field name="name">leaf1</field>
+		<field name="parent">2</field>
+	</row>
+	<row>
+		<field name="id">4</field>
+		<field name="lft">5</field>
+		<field name="rgt">6</field>
+		<field name="name">leaf2</field>
+		<field name="parent">2</field>
+	</row>
+	<row>
+		<field name="id">5</field>
+		<field name="lft">8</field>
+		<field name="rgt">9</field>
+		<field name="name">rootnode childless</field>
+		<field name="parent">0</field>
+	</row>
+	</table_data>
+</database>
+</mysqldump>
+	

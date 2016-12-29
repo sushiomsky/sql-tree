@@ -9,6 +9,8 @@
  * @license GPL
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  */
+namespace Suchomsky\SqlTree;
+
 use Suchomsky\SqlTree\SqlTree;
 
 class TreeAdapter extends SqlTree {

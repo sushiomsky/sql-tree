@@ -1,19 +1,53 @@
 <?php
-/**
- * class: classname
- * purpose: description
- * 
- * @copyright Copyright (C) 2001-2016 Webschreinerei
- * @author Dennis Suchomsky dennis.suchomsky@gmail.com
- * @license GPL
- * @license http://opensource.org/licenses/gpl-license.php GNU Public License
- * @todo
- *
- */
-use PHPUnit\Framework\TestCase;
-class MoneyTest extends TestCase {
-	public function testWorkingEnvieroment() {
-		$pdo = new PDO ( 'mysql:host=localhost;dbname=nested_sets' );
-	}
+use Suchomsky\SqlTree\SqlTree;
+
+abstract class GenericDatabaseTestCase extends PHPUnit_Extensions_Database_TestCase
+{
+    // only instantiate pdo once for test clean-up/fixture load
+    static private $pdo = null;
+
+    // only instantiate PHPUnit_Extensions_Database_DB_IDatabaseConnection once per test
+    private $conn = null;
+
+    final public function getConnection()
+    {
+        if ($this->conn === null) {
+            if (self::$pdo == null) {
+                self::$pdo = new PDO( $GLOBALS['DB_DSN'], $GLOBALS['DB_USER'], $GLOBALS['DB_PASSWD'] );
+            }
+            $this->conn = $this->createDefaultDBConnection(self::$pdo, $GLOBALS['DB_DBNAME']);
+        }
+
+        return $this->conn;
+    }
+    
+    /**
+     * @return PHPUnit_Extensions_Database_DataSet_IDataSet
+     */
+    public function getDataSet()
+    {
+  		return $this->createMySQLXMLDataSet('./tests/_files/treetable.xml');
+    }
+}
+
+class SqlTreeTest extends GenericDatabaseTestCase
+{
+    public function testCreateQueryTable()
+    {
+    	$tableNames = ['nested_set'];
+        $queryTable = $this->getConnection()->createQueryTable('nested_set', 'DELETE FROM nested_set WHERE 1');
+        $dataSet = $this->getConnection()->createDataSet(['nested_set']);
+        $expectedDataSet = $this->createMySQLXMLDataSet('./tests/_files/treetable.xml');
+        $this->assertDataSetsEqual($expectedDataSet, $dataSet);
+    }
+    
+    public function testTreeModifier(){
+    	$dbCreds['host'] = 'localhost';
+    	$dbCreds['db'] = 'sqltree';
+    	$dbCreds['user'] = 'root';
+    	$dbCreds['password'] = '1234';
+    	
+    	$sqlTree = new SqlTree(SqlTree::connectDb($dbCreds));
+    }
 }
 ?>
