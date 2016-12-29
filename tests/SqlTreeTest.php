@@ -34,9 +34,7 @@ class SqlTreeTest extends GenericDatabaseTestCase
 {
     public function testCreateQueryTable()
     {
-    	$tableNames = ['nested_set'];
-        $queryTable = $this->getConnection()->createQueryTable('nested_set', 'DELETE FROM nested_set WHERE 1');
-        $dataSet = $this->getConnection()->createDataSet(['nested_set']);
+    	$dataSet = $this->getConnection()->createDataSet(['nested_set']);
         $expectedDataSet = $this->createMySQLXMLDataSet('./tests/_files/treetable.xml');
         $this->assertDataSetsEqual($expectedDataSet, $dataSet);
     }
@@ -48,6 +46,9 @@ class SqlTreeTest extends GenericDatabaseTestCase
     	$dbCreds['password'] = '1234';
     	
     	$sqlTree = new SqlTree(SqlTree::connectDb($dbCreds));
+    	$sqlTree->insertRootNode('rootnode');
+    	$sqlTree->insertSubNode('subnode');
+    	$sqlTree->insertNode('brothernode');
     }
 }
 ?>

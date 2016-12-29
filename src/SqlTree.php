@@ -51,7 +51,7 @@ class SqlTree {
 			'SELECT_WHERE_ID' => 'SELECT :id, :rgt, :lft, :parent, :name FROM :table WHERE :id=:value_id LIMIT 0,1',
 			'SELECT_TOP_RGT' => 'SELECT :rgt FROM :table ORDER BY :rgt DESC LIMIT 0,1',
 			'UPDATE_PARENTS_RGT' => 'UPDATE :table SET :rgt = :rgt +2 WHERE :rgt >= :value_rgt',
-			'UPDATE_PARENTS_LFT' => 'UPDATE :table SET :lft = :lft +2 WHERE :lft >= :value_lft',
+			'UPDATE_PARENTS_LFT' => 'UPDATE :table SET :lft = :lft +2 WHERE :lft > :value_rgt',
 			'INSERT_NODE' => 'INSERT INTO :table (:lft, :rgt, :parent, :name) VALUES(:value_lft, :value_rgt, :value_parent, :value_name)'
 	);
 	
@@ -74,7 +74,7 @@ class SqlTree {
 	public function __construct($pdo, $columns = NULL)
 	{
 		if ($columns == NULL) {
-			$this->columns = \Suchomsky\SqlTree\SqlTree::COLUMNS;
+			$this->columns = self::COLUMNS;
 		}
 		try {
 			$this->pdo = $pdo;
@@ -104,7 +104,7 @@ class SqlTree {
 	public function getNodeById($id){
 		$this->statements['select_where_id']->bindParam(':value_id', $id);
 		$this->statements['select_where_id']->execute();
-		return $this->statements['select_where_id']->fetch ( PDO::FETCH_ASSOC );
+		return $this->statements['select_where_id']->fetch ( \PDO::FETCH_ASSOC );
 	}
 
 	/**
@@ -113,16 +113,14 @@ class SqlTree {
 	 * @param string $name Nodename
 	 * @return void
 	 */
-	protected function insertNode($name){
+	public function insertNode($name){
 		$neighbour = $this->getNodeById($this->nodePointer[count($this->nodePointer) - 1]);
-
-		$this->statements['update_parents_lft']->execute();
-		$this->statements['update_parents_lgt']->execute();
-
-		$this->statements['insert_node']->bindValue( ':value_lft', $neighbour[$this->columns['rgt']] + 1, PDO::PARAM_INT );
-		$this->statements['insert_node']->bindValue( ':value_rgt', $neighbour[$this->columns['rgt']] + 2, PDO::PARAM_INT );
-		$this->statements['insert_node']->bindParam( ':value_name', $name, PDO::PARAM_STR );
-		$this->statements['insert_node']->bindValue( ':value_parent', $neighbour[$this->columns['parent']], PDO::PARAM_INT );
+		$this->updateWhereLftRgtHigherEqual($neighbour[$this->columns['rgt']]);
+			
+		$this->statements['insert_node']->bindValue( ':value_lft', $neighbour[$this->columns['rgt']] + 1, \PDO::PARAM_INT );
+		$this->statements['insert_node']->bindValue( ':value_rgt', $neighbour[$this->columns['rgt']] + 2, \PDO::PARAM_INT );
+		$this->statements['insert_node']->bindParam( ':value_name', $name, \PDO::PARAM_STR );
+		$this->statements['insert_node']->bindValue( ':value_parent', $neighbour[$this->columns['parent']], \PDO::PARAM_INT );
 		$this->statements['insert_node']->execute ();
 		$this->nodePointer[] = $this->pdo->lastInsertId ();
 	}
@@ -133,16 +131,14 @@ class SqlTree {
 	 * @param string $name Nodename
 	 * @return void
 	 */
-	protected function insertSubNode($name){
+	public function insertSubNode($name){
 		$parent = $this->getNodeById($this->nodePointer[count($this->nodePointer) - 1]);
-
-		$this->statements['update_parents_lft']->execute();
-		$this->statements['update_parents_lgt']->execute();
-
-		$this->statements['insert_node']->bindValue( ':value_lft', $parent[$this->columns['rgt']], PDO::PARAM_INT );
-		$this->statements['insert_node']->bindValue( ':value_rgt', $parent[$this->columns['rgt']] + 1, PDO::PARAM_INT );
-		$this->statements['insert_node']->bindParam( ':value_name', $name, PDO::PARAM_STR );
-		$this->statements['insert_node']->bindValue( ':value_parent', $parent[$this->columns['parent']], PDO::PARAM_INT );
+		$this->updateWhereLftRgtHigherEqual($parent[$this->columns['rgt']]);
+		
+		$this->statements['insert_node']->bindValue( ':value_lft', $parent[$this->columns['rgt']], \PDO::PARAM_INT );
+		$this->statements['insert_node']->bindValue( ':value_rgt', $parent[$this->columns['rgt']] + 1, \PDO::PARAM_INT );
+		$this->statements['insert_node']->bindParam( ':value_name', $name, \PDO::PARAM_STR );
+		$this->statements['insert_node']->bindValue( ':value_parent', $parent[$this->columns['parent']], \PDO::PARAM_INT );
 		$this->statements['insert_node']->execute ();
 		$this->nodePointer[] = $this->pdo->lastInsertId ();
 	}
@@ -153,16 +149,16 @@ class SqlTree {
 	 * @param string $name Nodename
 	 * @return void
 	 */
-	protected function insertRootNode($name){
+	public function insertRootNode($name){
 		$this->nodePointer = null;
 		$rgt = $this->selectRgtOrderDesc();
 		$left = $rgt + 1;
 		$right = $rgt + 2;
-		$this->insertStatement->bindValue ( ':value_lft', $rgt + 1, PDO::PARAM_INT );
-		$this->insertStatement->bindValue ( ':value_rgt', $rgt + 2, PDO::PARAM_INT );
-		$this->insertStatement->bindParam ( ':value_name', $name, PDO::PARAM_STR );
-		$this->insertStatement->bindValue ( ':value_parent', 0, PDO::PARAM_INT );
-		$this->insertStatement->execute ();
+		$this->statements['insert_node']->bindValue ( ':value_lft', $rgt + 1, \PDO::PARAM_INT );
+		$this->statements['insert_node']->bindValue ( ':value_rgt', $rgt + 2, \PDO::PARAM_INT );
+		$this->statements['insert_node']->bindParam ( ':value_name', $name, \PDO::PARAM_STR );
+		$this->statements['insert_node']->bindValue ( ':value_parent', 0, \PDO::PARAM_INT );
+		$this->statements['insert_node']->execute ();
 		$this->nodePointer[] = $this->pdo->lastInsertId ();
 	}
 
@@ -201,10 +197,21 @@ class SqlTree {
 	 */
 	private function selectRgtOrderDesc() {
 		$this->statements['select_top_rgt']->execute();
-		$result = $this->statements['select_top_rgt']->fetch ( PDO::FETCH_ASSOC );
+		$result = $this->statements['select_top_rgt']->fetch ( \PDO::FETCH_ASSOC );
 		return $result[$this->columns['rgt']];
 	}
 
+	/**
+	 * Yes 2x times :value_rgt is correct!
+	 * @param integer $value the rgt/lft value 
+	 */
+	private function updateWhereLftRgtHigherEqual($value){
+		$this->statements['update_parents_lft']->bindValue(':value_rgt',$value);
+		$this->statements['update_parents_lft']->execute();
+		$this->statements['update_parents_rgt']->bindValue(':value_rgt',$value);
+		$this->statements['update_parents_rgt']->execute();	
+	}
+	
 	/**
 	 * close database connection
 	 *
