@@ -28,7 +28,6 @@ class SqlTree {
 	 */
 	private $pdo = null;
 
-	
 	/**
 	 * @var array|null pdo prepared statements
 	 */
@@ -66,12 +65,24 @@ class SqlTree {
 			'parent' => 'parent');
 	
 	/**
-	 * Connects to the database and checks for valid column names
+	 * 
+	 * @var mixed[] default database credentials
+	 */
+	const DB_CREDS = array(
+	    'host' => 'localhost',
+	    'db' => 'sqltree',
+	    'user' => 'sqltree',
+	    'password' => '1234');
+	
+	/**
+	 * 
+	 * Validation of database/pdo object & table columns
+	 * closes connection on error 
 	 *
-	 * @param array $dbCreds
+	 * @param \PDO $pdo
 	 * @param array $columns
 	 */
-	public function __construct($pdo, $columns = NULL)
+	public function __construct(&$pdo, $columns = NULL)
 	{
 		if ($columns == NULL) {
 			$this->columns = self::COLUMNS;
@@ -86,10 +97,20 @@ class SqlTree {
 		}
 	}
 
-	public static function connectDb($dbCreds) {
+	/**
+	 * 
+	 * Connects to the database and creates a \PDO object nescessary for the constructor
+	 * @param unknown $dbCreds
+	 * @return NULL|\PDO
+	 */
+	public static function connectDb($dbCreds = null) {
+	    if ($dbCreds == NULL) {
+	        $dbCreds = self::DB_CREDS;
+	    }
 		try {
 			$pdo = new \PDO( 'mysql:host=' . $dbCreds['host'] . ';dbname=' . $dbCreds['db'], $dbCreds['user'], $dbCreds['password'] );
 		} catch (\PDOException $e) {
+		    $this->errors[] = $e->getMessage ();
 			$pdo = null;
 		}
 		return $pdo;
@@ -220,8 +241,10 @@ class SqlTree {
 	private function closeConnection() {
 		if (count($this->errors) > 0) {
 			$this->pdo->rollBack();
+			foreach ($this->errors as $error){
+			    echo "Error: ".$error." \n";
+			}
 		}
 		$this->pdo = null;
 	}
-
 }
