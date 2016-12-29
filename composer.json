@@ -1,5 +1,5 @@
 {
-	"name": "suchomsky/SqlTree",
+	"name": "suchomsky/sql-tree",
 	"description": "Manages a nested sets sql table structure",
 	"homepage": "https://sushiomsky.github.io/SqlTree/",
 	"license": "GPL-3.0+",
