@@ -3,7 +3,7 @@
  * class: TreeAdapter
  * purpose: batch processing & transaction handling
  * Focus: Data/tree consistency
- * 
+ *
  * @copyright Copyright (C) 2001-2016 Webschreinerei
  * @author Dennis Suchomsky dennis.suchomsky@gmail.com
  * @license GPL
@@ -11,8 +11,7 @@
  */
 use Suchomsky\SqlTree\SqlTree;
 
-class TreeAdapter extends SqlTree 
-{
+class TreeAdapter extends SqlTree {
 	function __construct($dbCreds, $columns) {
 		parent::__construct ( $dbCreds, $columns );
 	}
@@ -38,4 +37,5 @@ class TreeAdapter extends SqlTree
 	}
 	protected function updateParent() {
 	}
+
 }
