@@ -9,7 +9,9 @@
  * @license GPL
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  */
-class XmlTree extends Sql {
+namespace Suchomsky\SqlTree;
+
+class XmlTree extends SqlTree {
 
     /**
      *
@@ -27,24 +29,23 @@ class XmlTree extends Sql {
         parent::__construct($pdo, $columns);
 
         $this->xmlReader = $xmlUrl;
-        $this->xmlReader = new XmlReader();
+        $this->xmlReader = new \XmlReader();
         $this->xmlReader->open($xmlUrl);
 
         $this->processElements();
     }
 
     private function processElements(){
-        $parents[] = 0;
         $depth = 0;
         while ($this->xmlReader->read()) {
             switch($this->xmlReader->nodeType){
 
-                case(XMLReader::END_ELEMENT):
+                case(\XMLReader::END_ELEMENT):
                     $this->levelUp();
                     $depth--;
                     break;
 
-                case(XMLREADER::ELEMENT):
+                case(\XMLREADER::ELEMENT):
                     if ($depth == 0) {
                         $this->insertRootNode($this->xmlReader->name);	;
                     }else {
@@ -53,7 +54,7 @@ class XmlTree extends Sql {
                     $depth++;
                     break;
 
-                case(XMLREADER::TEXT):
+                case(\XMLREADER::TEXT):
                     $this->insertSubNode($this->xmlReader->value);
                     break;
             }

@@ -1,5 +1,6 @@
 <?php
 use Suchomsky\SqlTree\SqlTree;
+use Suchomsky\SqlTree\XmlTree;
 
 abstract class SqlTreeSetup extends PHPUnit_Extensions_Database_TestCase
 {
@@ -36,25 +37,33 @@ class SqlTreeTest extends SqlTreeSetup
         $expectedDataSet = $this->createMySQLXMLDataSet('./tests/_files/treetable.xml');
         $this->assertDataSetsEqual($expectedDataSet, $dataSet);
     }
-    
+
     public function testTreeModifier(){
+        $dbCreds['host'] = 'localhost';
+        $dbCreds['db'] = $GLOBALS['DB_DBNAME'];
+        $dbCreds['user'] = $GLOBALS['DB_USER'];
+        $dbCreds['password'] = $GLOBALS['DB_PASSWD'];
+         
+        $pdo = SqlTree::connectDb($dbCreds);
+        $sqlTree = new SqlTree($pdo);
+    
+        $this->assertTrue($sqlTree->validateTree());
+        $sqlTree->insertRootNode('rootnode');
+        $this->assertTrue($sqlTree->validateTree());
+        $sqlTree->insertSubNode('subnode');
+        $this->assertTrue($sqlTree->validateTree());
+        $sqlTree->insertNode('brothernode');
+        $this->assertTrue($sqlTree->validateTree());
+    }
+    
+    public function testXmlTree(){
     	$dbCreds['host'] = 'localhost';
     	$dbCreds['db'] = $GLOBALS['DB_DBNAME'];
     	$dbCreds['user'] = $GLOBALS['DB_USER'];
     	$dbCreds['password'] = $GLOBALS['DB_PASSWD'];
     	
     	$pdo = SqlTree::connectDb($dbCreds);
-    	$sqlTree = new SqlTree($pdo);
-
-    	$this->assertTrue($sqlTree->validateTree());
-    	$sqlTree->insertRootNode('rootnode');
-    	$this->assertTrue($sqlTree->validateTree());
-    	$sqlTree->insertSubNode('subnode');
-    	$this->assertTrue($sqlTree->validateTree());
-    	$sqlTree->insertNode('brothernode');
-    	$this->assertTrue($sqlTree->validateTree());
-    	
-    	$xmlTree = new XmlTree('https://www.jpc.de/jpcng/home/xml/-/task/search/dosearch/1/k/jazz/medium/LP/searchcount/40', $dbCreds);
+    	$xmlTree = new XmlTree('./tests/_files/xmlimport.xml', $pdo);    	 
     }
     
     

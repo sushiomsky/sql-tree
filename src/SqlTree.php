@@ -219,7 +219,7 @@ class SqlTree {
 	 * @return boolean
 	 */
 	public function levelUp(){
-	    array_top($this->nodePointer);
+	    array_pop($this->nodePointer);
 	}
 	
 	/**

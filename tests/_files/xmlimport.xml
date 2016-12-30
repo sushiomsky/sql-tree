@@ -1,0 +1,3453 @@
+<?xml version="1.0"?>
+<artikelliste xmlns="uri:jpc" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://www.jpc-partner.de/doku/jpc.xsd" type="searchresults" totalcount="4490" start="0" count="40">
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>4236644</hnum>
+    <label>Hubro</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>1982</interpret>
+    <titel>A/B (180g) (LP + CD)</titel>
+    <jahr>2010-13</jahr>
+    <anzmed>1</anzmed>
+    <ean13>7033662035328</ean13>
+    <lagerbestand>lieferbar innerhalb 1-2 Wochen&lt;br /&gt;(soweit verf&#xFC;gbar beim Lieferanten)</lagerbestand>
+    <tidisplkern>A/B (180g) (LP + CD)</tidisplkern>
+    <preis>22.99</preis>
+    <voe_datum>12.05.2014</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/7033662035328.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/7033662035328.jpg</url>
+        <width>600</width>
+        <height>600</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/7033662035328.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>18:16</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>02:01</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>03:51</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>03:12</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>01:08</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>05:00</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>8299478</hnum>
+    <label>Jazzland</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Eivind Aarset</interpret>
+    <titel>I.E. (180g)</titel>
+    <anzmed>2</anzmed>
+    <ean13>0602547307262</ean13>
+    <zusatztext>Eivind Aarset ist ein norwegischer Jazz-Gitarrist und Komponist. Bekannt wurde er vor allem durch seine Mitwirkung an einigen legend&#xE4;ren Aufnahmen von Musikern und K&#xFC;nstlern wie: Ray Charles, Dee Dee Bridgewater, Ute Lemper oder auch Cher.&lt;br&gt;&lt;br&gt; 
+Bei seinen Soloaufnahmen verbindet Aarset meistens Jazz mit elektronischer Musik. Nachdem er den Labelgr&#xFC;nder und Jazzpianist Bugge Wesseltoft kennenlernte, ver&#xF6;ffentlicht der sympathische Norweger im Herbst 2015 ein weiteres Album.
+
+&lt;h3&gt;Rezensionen&lt;/h3&gt;&lt;br&gt;
+&#xBB;Diese Musik spielt mit Statik und Bewegung, Motiv-Entr&#xFC;mpelung und Akzentuierung, klangr&#xE4;umlich weit, assoziativ, slow-fi.&#xAB; (stereoplay, November 2015)&lt;br&gt;&lt;br&gt;
+
+&#xBB;... ein genial strukturierter Instrumentalsound voller Klangfarben, der einen auch k&#xF6;rperlich packt.&#xAB; (Jazzthing, November 2015 - Januar 2016)</zusatztext>
+    <lagerbestand>Artikel am Lager</lagerbestand>
+    <tidisplkern>I.E. (180g)</tidisplkern>
+    <preis>21.99</preis>
+    <voe_datum>25.09.2015</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/0602547307262.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/0602547307262.jpg</url>
+        <width>600</width>
+        <height>600</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/0602547307262.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Rask</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Sakte</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Hidden/Feral</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>One And The Same</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Wanderlust: I The City Awake / II Overgrown / III View From Above</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>They'll Be Asked Nothing</titel>
+        </track>
+        <track>
+          <number>7</number>
+          <titel>One And The Same Again</titel>
+        </track>
+        <track>
+          <number>8</number>
+          <titel>Through Clogged Streets, Passed Rotten Buildings...</titel>
+        </track>
+        <track>
+          <number>9</number>
+          <titel>Return To Her Home</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>6849399</hnum>
+    <label>Agogo</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Stephan Abel</interpret>
+    <titel>The Windmills Of Your Mind (180g)</titel>
+    <info>*** Gatefold Cover
++ Buggy Braune, Olaf Casimir, Heiz Lichius, Ken Norris</info>
+    <jahr>2014</jahr>
+    <anzmed>2</anzmed>
+    <ean13>4260130541477</ean13>
+    <lagerbestand>lieferbar innerhalb einer Woche&lt;br /&gt;(soweit verf&#xFC;gbar beim Lieferanten)</lagerbestand>
+    <tidisplkern>The Windmills Of Your Mind (180g)</tidisplkern>
+    <preis>21.99</preis>
+    <voe_datum>27.03.2015</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/4260130541477.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/4260130541477.jpg</url>
+        <width>1400</width>
+        <height>1400</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/4260130541477.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Chelsea Bridge</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Never Let Me Go</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>It Might As Well Be Spring</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>Olhos de gato</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Spring Is Here</titel>
+        </track>
+      </disk>
+      <disk>
+        <number>2</number>
+        <track>
+          <number>1</number>
+          <titel>The Windmills Of Your Mind</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Soul Eyes</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Everything Happens To Me</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>The Peacocks</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Estate</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>The Party Is Over</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>4233307</hnum>
+    <label>ECM</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>John Abercrombie</interpret>
+    <titel>Timeless (180g)</titel>
+    <info>+ Jan Hammer, Jack De Johnette</info>
+    <presse>&#xBB;Am intensivsten &#xE4;u&#xDF;ert sich dieser Jazz in den schnellen, am sch&#xF6;nsten in den stillen St&#xFC;cken da, wo die Kl&#xE4;nge erregende Plastizit&#xE4;t gewinnen.&#xAB; (Die Zeit) &lt;br&gt;&lt;br&gt;
+
+&#xBB;Allein der
+Auftaktsong &#x203A;Lungs&#x2039; springt einen geradezu
+an. Den Bass &#xFC;bernimmt Hammer ganz cool
+mit den Orgelpedalen. Abercrombie spielt
+seine Elektrische wie ein Gott, aber auch
+wenn er zur Akustischen greift (mit Hammer
+am Piano), verl&#xE4;sst er selten die Himmelssph&#xE4;ren.
+Doch das sch&#xF6;nste St&#xFC;ck, und mit
+das sch&#xF6;nste im gesamten ECM-Katalog,
+schuf er mit dem Titelsong. Zum Abheben in
+R&#xE4;ume au&#xDF;erhalb der Zeit.&#xAB; (Good Times, Dezember 2016 / Januar 2017)</presse>
+    <jahr>1974</jahr>
+    <anzmed>1</anzmed>
+    <ean13>0602537435227</ean13>
+    <lagerbestand>Artikel am Lager</lagerbestand>
+    <tidisplkern>Timeless (180g)</tidisplkern>
+    <preis>19.99</preis>
+    <voe_datum>07.10.2016</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/0602537435227.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/0602537435227.jpg</url>
+        <width>300</width>
+        <height>300</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/0602537435227.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Lungs</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Love Song</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Ralph's Piano Waltz</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>Red And Orange</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Remembering</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>Timeless</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>5685814</hnum>
+    <label>ECM</label>
+    <typnum>1</typnum>
+    <genre>576</genre>
+    <genretext>Guitar Jazz</genretext>
+    <interpret>John Abercrombie</interpret>
+    <titel>Up And Coming</titel>
+    <jahr>2016</jahr>
+    <anzmed>1</anzmed>
+    <ean13>0602557262384</ean13>
+    <lagerbestand>Artikel noch nicht erschienen, &lt;b&gt;voraussichtlicher Liefertermin ist der 13.1.2017.&lt;/b&gt;&lt;br /&gt;Sie k&amp;ouml;nnen den Titel schon jetzt bestellen. Versand an Sie erfolgt gleich nach Verf&amp;uuml;gbarkeit.</lagerbestand>
+    <tidisplkern>Up And Coming</tidisplkern>
+    <preis>19.99</preis>
+    <voe_datum>13.01.2017</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/0602557262384.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/0602557262384.jpg</url>
+        <width>600</width>
+        <height>600</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/0602557262384.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <soundinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <url mimetype="audio/mpeg">https://mp31.phononet.de/jpc265894628e913/jpcmp3/d2/384/262/LOZEPXYCARWOBGZPHLAGKXYRWMEC.mp3</url>
+        </track>
+        <track>
+          <number>2</number>
+          <url mimetype="audio/mpeg">https://mp31.phononet.de/jpc265894628e913/jpcmp3/d2/384/262/LOZEPXYCARWOBGZPHLAGKXYRWMHB.mp3</url>
+        </track>
+        <track>
+          <number>3</number>
+          <url mimetype="audio/mpeg">https://mp31.phononet.de/jpc265894628e913/jpcmp3/d2/384/262/LOZEPXYCARWOBGZPHLAGKXYRWMHE.mp3</url>
+        </track>
+        <track>
+          <number>4</number>
+          <url mimetype="audio/mpeg">https://mp31.phononet.de/jpc265894628e913/jpcmp3/d2/384/262/LOZEPXYCARWOBGZPHLAGKXYRWMBO.mp3</url>
+        </track>
+      </disk>
+    </soundinfos>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Joy</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Flipside</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Sunday School</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>Up And Coming</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Tears</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>Silver Circle</titel>
+        </track>
+        <track>
+          <number>7</number>
+          <titel>Nardis</titel>
+        </track>
+        <track>
+          <number>8</number>
+          <titel>Jumbles</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>2591606</hnum>
+    <label>Strut</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Idris Ackamoor</interpret>
+    <titel>We Be All Africans (180g)</titel>
+    <info>+ The Pyramids</info>
+    <jahr>2016</jahr>
+    <anzmed>1</anzmed>
+    <ean13>0730003314414</ean13>
+    <lagerbestand>lieferbar innerhalb einer Woche&lt;br /&gt;(soweit verf&#xFC;gbar beim Lieferanten)</lagerbestand>
+    <tidisplkern>We Be All Africans (180g)</tidisplkern>
+    <preis>23.99</preis>
+    <voe_datum>27.05.2016</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h74/front/0/0730003314414.jpg</url>
+        <width>75</width>
+        <height>74</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/0730003314414.jpg</url>
+        <width>600</width>
+        <height>593</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/0730003314414.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>We be all africans 6:12</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Epiphany 7:20</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Silent days 6:12</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>Rhapsody in Berlin 6:20</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Clarion call 5:49</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>Traponga 2.17</titel>
+        </track>
+        <track>
+          <number>7</number>
+          <titel>Whispering tenderness 3.49</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>8362525</hnum>
+    <label>Jazz Workshop</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Pepper Adams &amp; Jimmy Knepper</interpret>
+    <titel>The Pepper-Knepper Quintet (remastered) (180g) (Limited Edition) (mono &amp; stereo)</titel>
+    <jahr>1958</jahr>
+    <anzmed>1</anzmed>
+    <ean13>8427328887038</ean13>
+    <lagerbestand>lieferbar innerhalb 1-2 Wochen&lt;br /&gt;(soweit verf&#xFC;gbar beim Lieferanten)</lagerbestand>
+    <tidisplkern>The Pepper-Knepper Quintet (remastered) (180g) (Limited Edition) (mono &amp; stereo)</tidisplkern>
+    <preis>26.99</preis>
+    <voe_datum>17.09.2015</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/8427328887038.jpg</url>
+        <width>74</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/8427328887038.jpg</url>
+        <width>1240</width>
+        <height>1250</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/8427328887038.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Minor Catastrophe</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>All Too Soon</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Beaubien</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>Adams In The Apple</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Riverside Drive</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>I Didn't Know About You</titel>
+        </track>
+        <track>
+          <number>7</number>
+          <titel>Primrose Path</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>9815929</hnum>
+    <label>Delmark</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Jason Adasiewicz</interpret>
+    <titel>Spacer</titel>
+    <info>+ Nate McBride, Mike Reed</info>
+    <jahr>2011</jahr>
+    <anzmed>1</anzmed>
+    <ean13>0038153201210</ean13>
+    <zusatztext>Sun Rooms is Jason Adasiewicz's three year old trio featuring Jason (vibraphone), Mike Reed (drums) and Nate McBride (bass). Their debut record Sun Rooms (Delmark 593) was named by the New York Times (Ben Ratliff) as one of the Top 10 Pop and Jazz Records of 2010. Spacer was written in the winter of 2011 and slowly shaped through a month long residency at a north side Chicago bar, The Whistler. Engineered by Griffin Rodriguez, Spacer documents 8 new tunes by Adasiewicz, one from McBride, and one from Dutch cornetist Eric Boeren.</zusatztext>
+    <lagerbestand>Artikel am Lager</lagerbestand>
+    <tidisplkern>Spacer</tidisplkern>
+    <preis>20.99</preis>
+    <voe_datum>14.11.2011</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/0038153201210.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/0038153201210.jpg</url>
+        <width>500</width>
+        <height>500</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/0038153201210.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Solo one</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Hi touch</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Run fly</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>Pillow</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>The volunteer</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>Bees</titel>
+        </track>
+        <track>
+          <number>7</number>
+          <titel>Bobbie</titel>
+        </track>
+        <track>
+          <number>8</number>
+          <titel>Diesel</titel>
+        </track>
+        <track>
+          <number>9</number>
+          <titel>Waiting in the attic</titel>
+        </track>
+        <track>
+          <number>10</number>
+          <titel>Solo two</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>2824179</hnum>
+    <label>Jazz Workshop</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Nat Adderley (1931-2000)</interpret>
+    <titel>Branching Out (remastered) (180g) (Limited Edition)</titel>
+    <info>+ Johnny Griffin, The Three Sounds</info>
+    <jahr>1958</jahr>
+    <anzmed>1</anzmed>
+    <ean13>8427328887670</ean13>
+    <lagerbestand>Artikel am Lager</lagerbestand>
+    <tidisplkern>Branching Out (remastered) (180g) (Limited Edition)</tidisplkern>
+    <preis>29.99</preis>
+    <voe_datum>20.04.2016</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/8427328887670.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>thumb</size>
+        <back>rear</back>
+        <url>https://www.jpc.de/image/h75/rear/0/8427328887670.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/8427328887670.jpg</url>
+        <width>600</width>
+        <height>600</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>rear</back>
+        <url>https://www.jpc.de/image/cover/rear/0/8427328887670.jpg</url>
+        <width>600</width>
+        <height>600</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/8427328887670.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>rear</back>
+        <url>https://www.jpc.de/image/h30/rear/0/8427328887670.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Sister Caroline</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Well, You Needn't</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Dont' Get Around Much Any More</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>I've Got Plenty of Nothin'</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Branching Out</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>I Never Knew</titel>
+        </track>
+        <track>
+          <number>7</number>
+          <titel>Warm Blue Stream</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>5647106</hnum>
+    <label>Doxy</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Cannonball Adderley (1928-1975)</interpret>
+    <titel>Cannonball's Bossa Nova (140g) (Limited Numbered Edition) (Clear Vinyl)</titel>
+    <info>+ The Bossa Rio Sextet</info>
+    <jahr>1962</jahr>
+    <anzmed>1</anzmed>
+    <ean13>0889397020293</ean13>
+    <lagerbestand>lieferbar innerhalb 1-2 Wochen&lt;br /&gt;(soweit verf&#xFC;gbar beim Lieferanten)</lagerbestand>
+    <tidisplkern>Cannonball's Bossa Nova (140g) (Limited Numbered Edition) (Clear Vinyl)</tidisplkern>
+    <preis>13.99</preis>
+    <voe_datum>25.08.2014</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/0889397020293.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/0889397020293.jpg</url>
+        <width>499</width>
+        <height>500</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/0889397020293.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Clouds</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Minha Saudade</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Corcovado (Quiet Nights)</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>Batida Diferente</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Joyce's Samba</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>Groovy Samba</titel>
+        </track>
+        <track>
+          <number>7</number>
+          <titel>O Amor Em Paz</titel>
+        </track>
+        <track>
+          <number>8</number>
+          <titel>Sambop</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>6834215</hnum>
+    <label>DOL</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Cannonball Adderley (1928-1975)</interpret>
+    <titel>Cannonball's Bossa Nova (180g)</titel>
+    <info>+ The Bossa Rio Sextet</info>
+    <jahr>1962</jahr>
+    <anzmed>1</anzmed>
+    <ean13>0889397558277</ean13>
+    <lagerbestand>lieferbar innerhalb einer Woche&lt;br /&gt;(soweit verf&#xFC;gbar beim Lieferanten)</lagerbestand>
+    <tidisplkern>Cannonball's Bossa Nova (180g)</tidisplkern>
+    <preis>16.99</preis>
+    <voe_datum>13.02.2015</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/0889397558277.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/0889397558277.jpg</url>
+        <width>1500</width>
+        <height>1500</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/0889397558277.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Clouds</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Minha Saudade</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Corcovado</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>Batida Diferente</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Joyce's Samba</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>Groovy Samba</titel>
+        </track>
+        <track>
+          <number>7</number>
+          <titel>O Amor Em Paz</titel>
+        </track>
+        <track>
+          <number>8</number>
+          <titel>Sambop</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>5910078</hnum>
+    <label>Jazz Wax</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Cannonball Adderley (1928-1975)</interpret>
+    <titel>Cannonball's Sharpshooters (180g) (Limited Edition)</titel>
+    <info>DMM - Direct Metal mastering</info>
+    <jahr>1958</jahr>
+    <anzmed>1</anzmed>
+    <ean13>8436006494543</ean13>
+    <zusatztext>Jazz-Klassiker neu aufgelegt. DMM-Mastering.</zusatztext>
+    <lagerbestand>lieferbar innerhalb 1-2 Wochen&lt;br /&gt;(soweit verf&#xFC;gbar beim Lieferanten)</lagerbestand>
+    <tidisplkern>Cannonball's Sharpshooters (180g) (Limited Edition)</tidisplkern>
+    <preis>19.99</preis>
+    <voe_datum>01.09.2009</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/8436006494543.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/8436006494543.jpg</url>
+        <width>591</width>
+        <height>591</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/8436006494543.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Our Delight</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>What's New</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Fuller Bop Man</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>Jubilation</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Stay On It</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>If I Love Again</titel>
+        </track>
+        <track>
+          <number>7</number>
+          <titel>Straight, No Chaser</titel>
+        </track>
+        <track>
+          <number>8</number>
+          <titel>I'll Remember April</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>5723583</hnum>
+    <label>Concord</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Cannonball Adderley (1928-1975)</interpret>
+    <titel>In New York (180g) (Limited Edition)</titel>
+    <info>+ Nat Adderley, Yusef Lateef, Joe Zawinul, Sam Jones, Louis Hayes</info>
+    <jahr>1962</jahr>
+    <anzmed>1</anzmed>
+    <ean13>0888072359758</ean13>
+    <lagerbestand>lieferbar innerhalb einer Woche&lt;br /&gt;(soweit verf&#xFC;gbar beim Lieferanten)</lagerbestand>
+    <tidisplkern>In New York (180g) (Limited Edition)</tidisplkern>
+    <preis>19.99</preis>
+    <voe_datum>13.05.2015</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/0888072359758.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/0888072359758.jpg</url>
+        <width>600</width>
+        <height>600</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/0888072359758.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <soundinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>2</number>
+          <url mimetype="audio/mpeg">https://mp31.phononet.de/jpc265894628e913/jpcmp3/d2/758/359/ZEOPCLAXYKMREWOBZPGRCWKXYOHM.mp3</url>
+        </track>
+      </disk>
+    </soundinfos>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Introduction By Cannonball Adderley (Live - Remastered)</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Gemini (Live)</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Planet Earth (Live - Remastered)</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>Dizzy's Business (Live - Remastered)</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Syn-Anthesia (Live - Remastered)</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>Scotch And Water (Live - Remastered)</titel>
+        </track>
+        <track>
+          <number>7</number>
+          <titel>Cannon's Theme (Live - Remastered)</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>9909465</hnum>
+    <label>Original Jazz Classics</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Cannonball Adderley (1928-1975)</interpret>
+    <titel>In San Francisco (180g)</titel>
+    <anzmed>1</anzmed>
+    <ean13>0025218103510</ean13>
+    <lagerbestand>lieferbar innerhalb 1-2 Wochen&lt;br /&gt;(soweit verf&#xFC;gbar beim Lieferanten)</lagerbestand>
+    <tidisplkern>In San Francisco (180g)</tidisplkern>
+    <preis>22.99</preis>
+    <voe_datum>17.08.2009</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/0025218103510.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/0025218103510.jpg</url>
+        <width>600</width>
+        <height>600</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/0025218103510.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <soundinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <url mimetype="audio/mpeg">https://mp31.phononet.de/jpc265894628e913/jpcmp3/d2/510/103/EZOLAGHPRWXOPYLRBWCOZXYAGKME.mp3</url>
+        </track>
+        <track>
+          <number>2</number>
+          <url mimetype="audio/mpeg">https://mp31.phononet.de/jpc265894628e913/jpcmp3/d2/510/103/EZOLAGHPRWXOPYLRBWCOZXYAGKHB.mp3</url>
+        </track>
+      </disk>
+    </soundinfos>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>This Here</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Spontaneous Combustion</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Hi-Fly</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>You Got It!</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Bohemia After Dark</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>3678871</hnum>
+    <label>Wax Time</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Cannonball Adderley (1928-1975)</interpret>
+    <titel>In San Francisco (180g) (Limited Edition)</titel>
+    <info>+ Nat Adderley, Bobby Timmons, Sam Jones, Louis Hayes
+* DMM - Direct Metal Mastering</info>
+    <jahr>1959</jahr>
+    <anzmed>1</anzmed>
+    <ean13>8436028697014</ean13>
+    <zusatztext>&lt;h3&gt;Produktinfo:&lt;/h3&gt;&lt;br&gt;&#xD;
+&#xD;
+Jazz-Klassiker neu aufgelegt. Limitierte audiophile Edition. DMM-Mastering. 180 Gramm Virgin Vinyl.</zusatztext>
+    <lagerbestand>lieferbar innerhalb 1-2 Wochen&lt;br /&gt;(soweit verf&#xFC;gbar beim Lieferanten)</lagerbestand>
+    <tidisplkern>In San Francisco (180g) (Limited Edition)</tidisplkern>
+    <preis>22.99</preis>
+    <voe_datum>16.08.2010</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/8436028697014.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/8436028697014.jpg</url>
+        <width>600</width>
+        <height>600</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/8436028697014.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Announcement By Cannonball Into This Here</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Spontaneous Combustion</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Hi-fly</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>You Got It!</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Bohemia After Dark</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>3951016</hnum>
+    <label>Wax Time</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Cannonball Adderley (1928-1975)</interpret>
+    <titel>Jazz Workshop Revisited (remastered) (180g) (Limited Edition)</titel>
+    <info>+ Nat Adderley, Yusef Lateef, Zoe Zawinul, Sam Jones, Louis Hayes
+* DMM - Direct Metal Mastering</info>
+    <jahr>1962</jahr>
+    <anzmed>1</anzmed>
+    <ean13>8436542014595</ean13>
+    <zusatztext>Klassiker des Genres neu aufgelegt.
+Limitierte audiophile Edition. DMM-Mastering.</zusatztext>
+    <lagerbestand>lieferbar innerhalb einer Woche&lt;br /&gt;(soweit verf&#xFC;gbar beim Lieferanten)</lagerbestand>
+    <tidisplkern>Jazz Workshop Revisited (remastered) (180g) (Limited Edition)</tidisplkern>
+    <preis>19.99</preis>
+    <voe_datum>13.01.2014</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/8436542014595.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/8436542014595.jpg</url>
+        <width>607</width>
+        <height>606</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/8436542014595.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>An Opening Comment By Cannonball</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Primitivo</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Jessica's Day</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>Marney</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Another Few Words...</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>The Jive Samba</titel>
+        </track>
+        <track>
+          <number>7</number>
+          <titel>Lillie</titel>
+        </track>
+        <track>
+          <number>8</number>
+          <titel>Mellow Bruno</titel>
+        </track>
+        <track>
+          <number>9</number>
+          <titel>Time To Go Now - Really!</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>1906209</hnum>
+    <label>Wax Time</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Cannonball Adderley (1928-1975)</interpret>
+    <titel></titel>
+    <info>* DMM - Direct Metal Mastering</info>
+    <jahr>1961</jahr>
+    <anzmed>1</anzmed>
+    <ean13>8436028699957</ean13>
+    <zusatztext>Jazz-Klassiker neu aufgelegt. Inkl. Bonus-Track.</zusatztext>
+    <lagerbestand>Lieferzeit betr&amp;auml;gt mind. 4 Wochen&lt;br /&gt;(soweit verf&#xFC;gbar beim Lieferanten)</lagerbestand>
+    <tidisplkern></tidisplkern>
+    <preis>21.99</preis>
+    <voe_datum>17.02.2012</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/8436028699957.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/8436028699957.jpg</url>
+        <width>600</width>
+        <height>600</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/8436028699957.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Waltz For Debby</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Goodbye</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel></titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>Venice</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Toy</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>Elsa</titel>
+        </track>
+        <track>
+          <number>7</number>
+          <titel>Nancy (With The Laughing Face)</titel>
+        </track>
+        <track>
+          <number>8</number>
+          <titel></titel>
+        </track>
+        <track>
+          <number>9</number>
+          <titel>Toy (alt. take)</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>3195966</hnum>
+    <label>Jazzhaus</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Cannonball Adderley (1928-1975)</interpret>
+    <titel>Legends Live - Liederhalle Stuttgart March 20, 1969 (180g)</titel>
+    <info>+ Nat Adderley, Joe Zawinul, Victor Gaskin, Roy McCurdy</info>
+    <jahr>1969</jahr>
+    <anzmed>1</anzmed>
+    <ean13>0807280171297</ean13>
+    <zusatztext>Cannonball Adderley, Weggef&#xE4;hrte von Miles Davis, Live in Stuttgart 1969</zusatztext>
+    <lagerbestand>umgehend lieferbar, Bestand beim Lieferanten vorhanden</lagerbestand>
+    <tidisplkern>Legends Live - Liederhalle Stuttgart March 20, 1969 (180g)</tidisplkern>
+    <preis>23.99</preis>
+    <voe_datum>12.11.2012</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h74/front/0/0807280171297.jpg</url>
+        <width>75</width>
+        <height>74</height>
+      </image>
+      <image>
+        <size>thumb</size>
+        <back>rear</back>
+        <url>https://www.jpc.de/image/h74/rear/0/0807280171297.jpg</url>
+        <width>75</width>
+        <height>74</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/0807280171297.jpg</url>
+        <width>600</width>
+        <height>594</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>rear</back>
+        <url>https://www.jpc.de/image/cover/rear/0/0807280171297.jpg</url>
+        <width>600</width>
+        <height>594</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/0807280171297.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>rear</back>
+        <url>https://www.jpc.de/image/h30/rear/0/0807280171297.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Rumpelstiltskin</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Sweet Emma</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Oh babe</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel></titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>The painted desert</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>Work song</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>6837739</hnum>
+    <label>Jazzline</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Cannonball Adderley (1928-1975)</interpret>
+    <titel>Live In Cologne 1961 (remastered) (180g)</titel>
+    <info>+ Benny Carter Sextet
+*** Gatefold Cover</info>
+    <jahr>1961</jahr>
+    <anzmed>1</anzmed>
+    <ean13>5055551780173</ean13>
+    <zusatztext>&lt;h3&gt;Rezensionen&lt;/h3&gt;&lt;br&gt;
+&#xBB;... zu Gast im G&#xFC;rzenich war im April 1961 das Cannonball Adderley Quintett, das hier drei lange St&#xFC;cke lang brilliert, mit einem deutlich herausragenden Bandleader am Altsaxofon. Im WDR-Studio schaute dagegen das Benny Carter Sextet im November 1961 vorbei. Und Mister Carter zeigt hier in drei St&#xFC;cken dieses Besuchs seine Geschmeidigkeit und ganze Klasse als Altsaxofonist.&#xAB; (Jazzthing, April / Mai 2015)  
+
+&lt;h3&gt;Rezensionen&lt;/h3&gt;&lt;br&gt;
+&#xBB;Im Archiv des Westdeutschen
+Rundfunks
+schlummern wohl
+noch viele ungehobene
+Jazzsch&#xE4;tze.
+Denn was da regelm&#xE4;&#xDF;ig
+unter dem Label
+&#xBB;The Cologne Broadcast&#xAB; (siehe auch
+Oscar Peterson) gesch&#xFC;rft wird, sind meist
+Juwelen der Jazzgeschichte, zumindest der
+in Deutschland.&#xAB; &lt;br&gt;
+(Good Times, August / September 2015)</zusatztext>
+    <lagerbestand>Artikel am Lager</lagerbestand>
+    <tidisplkern>Live In Cologne 1961 (remastered) (180g)</tidisplkern>
+    <preis>19.99</preis>
+    <voe_datum>22.05.2015</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/5055551780173.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/5055551780173.jpg</url>
+        <width>600</width>
+        <height>600</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/5055551780173.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <soundinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <url mimetype="audio/mpeg">https://mp31.phononet.de/jpc265894628e913/jpcmp3/d2/017/178/ZXOYELACGKHPLAMBECKZMXERGCK.mp3</url>
+        </track>
+        <track>
+          <number>2</number>
+          <url mimetype="audio/mpeg">https://mp31.phononet.de/jpc265894628e913/jpcmp3/d2/017/178/ZXOYELACGKHPLAMBECKZMXERGHY.mp3</url>
+        </track>
+        <track>
+          <number>3</number>
+          <url mimetype="audio/mpeg">https://mp31.phononet.de/jpc265894628e913/jpcmp3/d2/017/178/ZXOYELACGKHPLAMBECKZMXERGHC.mp3</url>
+        </track>
+        <track>
+          <number>4</number>
+          <url mimetype="audio/mpeg">https://mp31.phononet.de/jpc265894628e913/jpcmp3/d2/017/178/ZXOYELACGKHPLAMBECKZMXERGYW.mp3</url>
+        </track>
+        <track>
+          <number>5</number>
+          <url mimetype="audio/mpeg">https://mp31.phononet.de/jpc265894628e913/jpcmp3/d2/017/178/ZXOYELACGKHPLAMBECKZMXERGYH.mp3</url>
+        </track>
+        <track>
+          <number>6</number>
+          <url mimetype="audio/mpeg">https://mp31.phononet.de/jpc265894628e913/jpcmp3/d2/017/178/ZXOYELACGKHPLAMBECKZMXERGYB.mp3</url>
+        </track>
+        <track>
+          <number>7</number>
+          <url mimetype="audio/mpeg">https://mp31.phononet.de/jpc265894628e913/jpcmp3/d2/017/178/ZXOYELACGKHPLAMBECKZMXERYGH.mp3</url>
+        </track>
+      </disk>
+    </soundinfos>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Lisa</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Announcement Cannonball Adderley</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>This Here</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>New Delhi</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Rose Room</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>Laura</titel>
+        </track>
+        <track>
+          <number>7</number>
+          <titel>It's Wonderful</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>1078941</hnum>
+    <label>DOL</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Cannonball Adderley (1928-1975)</interpret>
+    <titel>Quintet In San Francisco (140g)</titel>
+    <info>+ Nat Adderley, Bobby Timmons, Sam Jones, Louis Hayes</info>
+    <jahr>1959</jahr>
+    <anzmed>1</anzmed>
+    <ean13>0889397273316</ean13>
+    <lagerbestand>Lieferzeit betr&amp;auml;gt mind. 4 Wochen&lt;br /&gt;(soweit verf&#xFC;gbar beim Lieferanten)</lagerbestand>
+    <tidisplkern>Quintet In San Francisco (140g)</tidisplkern>
+    <preis>14.99</preis>
+    <voe_datum>04.06.2013</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/0889397273316.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/0889397273316.jpg</url>
+        <width>1719</width>
+        <height>1717</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/0889397273316.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>This here</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Spontaneous combustion</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Hi-fly</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>You got it!</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Bohemia after dark</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>6809466</hnum>
+    <label>DOL</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Cannonball Adderley (1928-1975)</interpret>
+    <titel>Somethin Else (180g)</titel>
+    <info>+ Miles Davis, Hank Jones, Sam Jones, Art Blakey</info>
+    <jahr>1958</jahr>
+    <anzmed>1</anzmed>
+    <ean13>0889397557942</ean13>
+    <lagerbestand>lieferbar innerhalb 1-2 Wochen&lt;br /&gt;(soweit verf&#xFC;gbar beim Lieferanten)</lagerbestand>
+    <tidisplkern>Somethin Else (180g)</tidisplkern>
+    <preis>12.99</preis>
+    <voe_datum>04.02.2015</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h68/front/0/0889397557942.jpg</url>
+        <width>75</width>
+        <height>68</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/0889397557942.jpg</url>
+        <width>236</width>
+        <height>213</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h27/front/0/0889397557942.jpg</url>
+        <width>30</width>
+        <height>27</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Autumn Leaves</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Love For Sale</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Somethin' Else</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>One For The Daddy-O</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Dancing In The Dark</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>8615516</hnum>
+    <label>Blue Note</label>
+    <typnum>1</typnum>
+    <genre>560</genre>
+    <genretext>BeBop/Hard Bop</genretext>
+    <interpret>Cannonball Adderley (1928-1975)</interpret>
+    <titel>Somethin' Else</titel>
+    <presse>P. Steder in Audio 12 / 87:"Von der Spannung
+zwischen der spr&#xFC;henden Vitalit&#xE4;t des Altsaxo-
+phonisten Cannonball Adderleys mit dem noch
+harmoniebezogenen Improvisationsstil und der
+verhaltenen Coolness des Trompeters Miles
+Davis, dessen Chorusse schon damals auf
+modalen Tonskalen hinsteuerten, lebt das
+gro&#xDF;artige Album "Somethin' Else".</presse>
+    <jahr>1958</jahr>
+    <anzmed>1</anzmed>
+    <ean13>0077774633819</ean13>
+    <lagerbestand>lieferbar innerhalb 1-2 Wochen&lt;br /&gt;(soweit verf&#xFC;gbar beim Lieferanten)</lagerbestand>
+    <tidisplkern>Somethin' Else</tidisplkern>
+    <preis>14.99</preis>
+    <voe_datum>07.04.1997</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/0077774633819.jpg</url>
+        <width>74</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>thumb</size>
+        <back>rear</back>
+        <url>https://www.jpc.de/image/h75/rear/0/0077774633819.jpg</url>
+        <width>74</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/0077774633819.jpg</url>
+        <width>450</width>
+        <height>456</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>rear</back>
+        <url>https://www.jpc.de/image/cover/rear/0/0077774633819.jpg</url>
+        <width>450</width>
+        <height>456</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/0077774633819.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>rear</back>
+        <url>https://www.jpc.de/image/h30/rear/0/0077774633819.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <soundinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <url mimetype="audio/mpeg">https://mp31.phononet.de/jpc265894628e913/jpcmp3/d2/819/633/ZOXLAYBPZGXYEBRCKZMECWXOYKMH.mp3</url>
+        </track>
+        <track>
+          <number>2</number>
+          <url mimetype="audio/mpeg">https://mp31.phononet.de/jpc265894628e913/jpcmp3/d2/819/633/ZOXLAYBPZGXYEBRCKZMECWXOKPHM.mp3</url>
+        </track>
+        <track>
+          <number>3</number>
+          <url mimetype="audio/mpeg">https://mp31.phononet.de/jpc265894628e913/jpcmp3/d2/819/633/ZOXLAYBPZGXYEBRCKZMECWXOHYKL.mp3</url>
+        </track>
+        <track>
+          <number>4</number>
+          <url mimetype="audio/mpeg">https://mp31.phononet.de/jpc265894628e913/jpcmp3/d2/819/633/ZOXLAYBPZGXYEBRCKZMECWXOHKLM.mp3</url>
+        </track>
+        <track>
+          <number>5</number>
+          <url mimetype="audio/mpeg">https://mp31.phononet.de/jpc265894628e913/jpcmp3/d2/819/633/ZOXLAYBPZGXYEBRCKZMECWXOYPRH.mp3</url>
+        </track>
+        <track>
+          <number>6</number>
+          <url mimetype="audio/mpeg">https://mp31.phononet.de/jpc265894628e913/jpcmp3/d2/819/633/ZOXLAYBPZGXYEBRCKZMECWXOYPBK.mp3</url>
+        </track>
+      </disk>
+    </soundinfos>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Autumn leaves</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Love for sale</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Somethin' else</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>One for daddy-o</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Dancing in the dark</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>Allison's uncle</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>5847888</hnum>
+    <label>JAZZ IMAGES</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Cannonball Adderley (1928-1975)</interpret>
+    <titel>Somethin' Else (180g Vinyl)-Jean-Pierre Leloir C</titel>
+    <anzmed>1</anzmed>
+    <ean13>8437016248140</ean13>
+    <lagerbestand>Artikel noch nicht erschienen, &lt;b&gt;voraussichtlicher Liefertermin ist der 27.1.2017.&lt;/b&gt;&lt;br /&gt;Sie k&amp;ouml;nnen den Titel schon jetzt bestellen. Versand an Sie erfolgt gleich nach Verf&amp;uuml;gbarkeit.</lagerbestand>
+    <tidisplkern>Somethin' Else (180g Vinyl)-Jean-Pierre Leloir C</tidisplkern>
+    <preis>21.99</preis>
+    <voe_datum>27.01.2017</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/8437016248140.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/8437016248140.jpg</url>
+        <width>600</width>
+        <height>600</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/8437016248140.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Autumn Leaves</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Love For Sale</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel></titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>One For Daddy-O</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Dancing In The Dark</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>3882529</hnum>
+    <label>Not Now</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Cannonball Adderley (1928-1975)</interpret>
+    <titel>Somethin' Else (180g)</titel>
+    <info>+ Miles Davis, Hank Jones, Sam Jones, Art Blakey</info>
+    <jahr>1958</jahr>
+    <anzmed>1</anzmed>
+    <ean13>5060348582175</ean13>
+    <lagerbestand>lieferbar innerhalb 2-3 Wochen&lt;br /&gt;(soweit verf&#xFC;gbar beim Lieferanten)</lagerbestand>
+    <tidisplkern>Somethin' Else (180g)</tidisplkern>
+    <preis>16.99</preis>
+    <voe_datum>14.07.2016</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/5060348582175.jpg</url>
+        <width>74</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/5060348582175.jpg</url>
+        <width>592</width>
+        <height>600</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/5060348582175.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Autumn leaves</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Love for sale</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Somethin'else</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>One for daddy-o</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Dancing in the dark</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>3504779</hnum>
+    <label>Ermitage</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Cannonball Adderley (1928-1975)</interpret>
+    <titel>Somethin' Else (remastered) (180g)</titel>
+    <info>+ Miles Davis, Hank Jones, Sam Jones, Art Blakey</info>
+    <jahr>1958</jahr>
+    <anzmed>1</anzmed>
+    <ean13>8032979642136</ean13>
+    <zusatztext>&lt;h3&gt;Rezensionen&lt;/h3&gt;&lt;br&gt;
+
+,,"Somethin' Else" endlich komplett auf Vinyl - das sollte man sich nicht entgehen lassen!" (Lp Magazin, April / Mai 2012)</zusatztext>
+    <lagerbestand>Lieferzeit betr&amp;auml;gt mind. 4 Wochen&lt;br /&gt;(soweit verf&#xFC;gbar beim Lieferanten)</lagerbestand>
+    <tidisplkern>Somethin' Else (remastered) (180g)</tidisplkern>
+    <preis>14.99</preis>
+    <voe_datum>27.11.2015</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/8032979642136.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>thumb</size>
+        <back>rear</back>
+        <url>https://www.jpc.de/image/h75/rear/0/8032979642136.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/8032979642136.jpg</url>
+        <width>300</width>
+        <height>300</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>rear</back>
+        <url>https://www.jpc.de/image/cover/rear/0/8032979642136.jpg</url>
+        <width>300</width>
+        <height>300</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/8032979642136.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>rear</back>
+        <url>https://www.jpc.de/image/h30/rear/0/8032979642136.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Autumn leaves</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Love for sale</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Somethin' else</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>One for daddy-O</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Dancing in the dark</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>3678890</hnum>
+    <label>Wax Time</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Cannonball Adderley (1928-1975)</interpret>
+    <titel>Sophisticated Swing (180g) (Limited Edition)</titel>
+    <jahr>1957</jahr>
+    <anzmed>1</anzmed>
+    <ean13>8436028697045</ean13>
+    <zusatztext>&lt;h3&gt;Produktinfo:&lt;/h3&gt;&lt;br&gt;&#xD;
+&#xD;
+Jazz-Klassiker neu aufgelegt. Limitierte audiophile Edition. DMM-Mastering. 180 Gramm Virgin Vinyl. Inkl. Bonus-Track.</zusatztext>
+    <lagerbestand>lieferbar innerhalb 1-2 Wochen&lt;br /&gt;(soweit verf&#xFC;gbar beim Lieferanten)</lagerbestand>
+    <tidisplkern>Sophisticated Swing (180g) (Limited Edition)</tidisplkern>
+    <preis>19.99</preis>
+    <voe_datum>24.09.2010</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/8436028697045.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/8436028697045.jpg</url>
+        <width>500</width>
+        <height>500</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/8436028697045.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Another kind of soul</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Miss Jackie's Delight</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Spring is here</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>Tribute To Brownie</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Spectacular</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>Jeannie</titel>
+        </track>
+        <track>
+          <number>7</number>
+          <titel>Stella By Starlight</titel>
+        </track>
+        <track>
+          <number>8</number>
+          <titel>Eddie McLin</titel>
+        </track>
+        <track>
+          <number>9</number>
+          <titel>Cobbweb</titel>
+        </track>
+        <track>
+          <number>10</number>
+          <titel>A foggy day (Bonus Track)</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>1535066</hnum>
+    <label>Wax Time</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Cannonball Adderley (1928-1975)</interpret>
+    <titel>The Bossa Rio Sextet With Sergio Mendes (180g) (Limited Edition)</titel>
+    <anzmed>1</anzmed>
+    <ean13>8436542013369</ean13>
+    <zusatztext>Jazz-Klassiker neu aufgelegt + 1 Bonus
+Track. Limitierte audiophile Edition. DMM-Mastering.</zusatztext>
+    <lagerbestand>lieferbar innerhalb einer Woche&lt;br /&gt;(soweit verf&#xFC;gbar beim Lieferanten)</lagerbestand>
+    <tidisplkern>The Bossa Rio Sextet With Sergio Mendes (180g) (Limited Edition)</tidisplkern>
+    <preis>21.99</preis>
+    <voe_datum>19.07.2013</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/8436542013369.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/8436542013369.jpg</url>
+        <width>600</width>
+        <height>600</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/8436542013369.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Clouds</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>minha saudade</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Corcovado</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>Batida Diferente</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Clouds (Single Version)</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>Joyce's samba</titel>
+        </track>
+        <track>
+          <number>7</number>
+          <titel>Groovy samba</titel>
+        </track>
+        <track>
+          <number>8</number>
+          <titel>O Amor Em Paz (Once I Loved)</titel>
+        </track>
+        <track>
+          <number>9</number>
+          <titel>Sambop</titel>
+        </track>
+        <track>
+          <number>10</number>
+          <titel>Corcovado (Alt Take)</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>4140613</hnum>
+    <label>Pan Am</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Cannonball Adderley (1928-1975)</interpret>
+    <titel>Them Dirty Blues +2 Bonus Tracks (remastered) (180g) (Limited Edition)</titel>
+    <info>+ Nat Adderley, Bobby Timmons, Bary Harris, Sam Jones, Louis Hayes
+* DMM - Direct Metal Mastering</info>
+    <jahr>1960</jahr>
+    <anzmed>1</anzmed>
+    <ean13>8436563180170</ean13>
+    <lagerbestand>Artikel am Lager</lagerbestand>
+    <tidisplkern>Them Dirty Blues +2 Bonus Tracks (remastered) (180g) (Limited Edition)</tidisplkern>
+    <preis>21.99</preis>
+    <voe_datum>23.09.2016</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/8436563180170.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/8436563180170.jpg</url>
+        <width>600</width>
+        <height>600</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/8436563180170.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Work Song</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Dat Dere</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Easy Living</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>Del Sasser</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Dat Dere (Bonus Track)</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>Jeannine</titel>
+        </track>
+        <track>
+          <number>7</number>
+          <titel>Soon</titel>
+        </track>
+        <track>
+          <number>8</number>
+          <titel>Them Dirty Blues</titel>
+        </track>
+        <track>
+          <number>9</number>
+          <titel>Work Song (Bonus Track)</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>3184128</hnum>
+    <label>DOL</label>
+    <typnum>1</typnum>
+    <genre>560</genre>
+    <genretext>BeBop/Hard Bop</genretext>
+    <interpret>Cannonball Adderley (1928-1975)</interpret>
+    <titel>Things Are Getting Better (140g)</titel>
+    <info>+ Milt Jackson, Wynton Kelly, Percy Heath u.a.</info>
+    <jahr>1958</jahr>
+    <anzmed>1</anzmed>
+    <ean13>0889397273415</ean13>
+    <lagerbestand>Lieferzeit betr&amp;auml;gt mind. 4 Wochen&lt;br /&gt;(soweit verf&#xFC;gbar beim Lieferanten)</lagerbestand>
+    <tidisplkern>Things Are Getting Better (140g)</tidisplkern>
+    <preis>14.99</preis>
+    <voe_datum>06.08.2013</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h74/front/0/0889397273415.jpg</url>
+        <width>75</width>
+        <height>74</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/0889397273415.jpg</url>
+        <width>1817</width>
+        <height>1788</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/0889397273415.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Blues oriental</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Things are getting better</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Serves me right</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>Groovin' high</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>The sidewalks of New York</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>Sounds for Sid</titel>
+        </track>
+        <track>
+          <number>7</number>
+          <titel>Just one of those things</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>2698487</hnum>
+    <label>Savoy Jazz</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Nat Adderley &amp; Cannonball Adderley</interpret>
+    <titel>Bohemia After Dark</titel>
+    <info>+ Kenny Clarke, Horace Silver, Paul Chambers, Hank Jones u.a.</info>
+    <jahr>1955</jahr>
+    <anzmed>1</anzmed>
+    <ean13>0795041607218</ean13>
+    <lagerbestand>lieferbar innerhalb 2-3 Wochen&lt;br /&gt;(soweit verf&#xFC;gbar beim Lieferanten)</lagerbestand>
+    <tidisplkern>Bohemia After Dark</tidisplkern>
+    <preis>28.99</preis>
+    <voe_datum>17.06.2016</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/0795041607218.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/0795041607218.jpg</url>
+        <width>500</width>
+        <height>500</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/0795041607218.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Bohemia after dark</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Chasm</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Willow weep for me</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>Hear me talkin' to ya</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>With apologies to Oscar</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>We'll be together again</titel>
+        </track>
+        <track>
+          <number>7</number>
+          <titel>Late entry</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>5415558</hnum>
+    <label>Concord</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Cannonball Adderley &amp; Milt Jackson</interpret>
+    <titel>Things Are Getting Better (180g) (Limited Edition)</titel>
+    <info>+ Wynton Kelly, Percy Heath, Art Blakey</info>
+    <jahr>1958</jahr>
+    <anzmed>1</anzmed>
+    <ean13>0888072359222</ean13>
+    <lagerbestand>Artikel am Lager</lagerbestand>
+    <tidisplkern>Things Are Getting Better (180g) (Limited Edition)</tidisplkern>
+    <preis>21.99</preis>
+    <voe_datum>17.10.2014</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/0888072359222.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/0888072359222.jpg</url>
+        <width>600</width>
+        <height>600</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/0888072359222.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <soundinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>2</number>
+          <url mimetype="audio/mpeg">https://mp31.phononet.de/jpc265894628e913/jpcmp3/d2/222/359/ZEOPCLAXYKMREBGWOZPXCRWKYOHM.mp3</url>
+        </track>
+      </disk>
+    </soundinfos>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Blues Oriental (Album Version)</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Things Are Getting Better (Instrumental)</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Serves Me Right (Take 5)</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>Groovin' High (Album Version)</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>The Sidewalks Of New York (Take 5)</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>Sounds For Sid (Album Version)</titel>
+        </track>
+        <track>
+          <number>7</number>
+          <titel>Just One Of Those Things (Album Version)</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>6817081</hnum>
+    <label>Contemplate</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>ADHD</interpret>
+    <titel>5</titel>
+    <info>* Magnus Trygvason Eliassen, Omar Gudjonsson, David Por Jonsson,
+Oskar Gudjonsson</info>
+    <jahr>2014</jahr>
+    <anzmed>1</anzmed>
+    <ean13>4050486110324</ean13>
+    <zusatztext>&lt;h3&gt;Rezensionen&lt;/h3&gt;&lt;br&gt;
+&#xBB;Zwischen Jazz, Indie und ein wenig Ambient kommen aus Island mal wieder
+starke Klangwellen.&#xAB; (Jazzthing, Februar / M&#xE4;rz 2015)</zusatztext>
+    <lagerbestand>Artikel am Lager</lagerbestand>
+    <tidisplkern>5</tidisplkern>
+    <preis>17.99</preis>
+    <voe_datum>27.02.2015</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/4050486110324.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/4050486110324.jpg</url>
+        <width>600</width>
+        <height>600</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/4050486110324.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Svedjan</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Free Anglo</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Eythor Gunnarsson</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>Flugzeug</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Indjanadansinn</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>Afi Palli</titel>
+        </track>
+        <track>
+          <number>7</number>
+          <titel>J&#xF6;rg Thienelt</titel>
+        </track>
+        <track>
+          <number>8</number>
+          <titel>Graena Thokan</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>2828313</hnum>
+    <label>Ozella</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Stefan Aeby</interpret>
+    <titel>Utopia (180g) (Limited Edition)</titel>
+    <info>+ Andre Pousaz, Julian Sartorius</info>
+    <jahr>2012</jahr>
+    <anzmed>1</anzmed>
+    <ean13>4038952010507</ean13>
+    <zusatztext>Der Traum der perfekten Welt. Der Freiheit. Der Gleichheit. Der Verwirklichung. Eine Welt im Umbruch. Ver&#xE4;nderung. Erneuerung. Neugier, auf der Suche nach Konstanz, nach Bekanntem. Gro&#xDF;es wird klein. Grenzen verschwinden. Alles wird m&#xF6;glich...Und mitten drin ein Piano-Trio. &lt;br&gt;
+Ein Trio welches den Traum hat, gemeinsam frei zu sein, welches neugierig Grenzen verschwinden l&#xE4;sst und sich dennoch seiner Wurzeln bewusst ist.
+
+&lt;h3&gt;Rezensionen&lt;/h3&gt;&lt;br&gt;
+,,Die eing&#xE4;ngigen und meistens ausgesprochen lyrischen Melodien verbinden sich mit warmen und lebendigen Grooves, die der Musik viel Raum zum Atmen lassen." (Jazzthing, November 2013 - Januar 2014)  </zusatztext>
+    <lagerbestand>lieferbar innerhalb 1-2 Wochen&lt;br /&gt;(soweit verf&#xFC;gbar beim Lieferanten)</lagerbestand>
+    <tidisplkern>Utopia (180g) (Limited Edition)</tidisplkern>
+    <preis>24.99</preis>
+    <voe_datum>08.11.2013</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/4038952010507.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/4038952010507.jpg</url>
+        <width>600</width>
+        <height>600</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/4038952010507.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <soundinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>2</number>
+          <url mimetype="audio/mpeg">https://mp31.phononet.de/jpc265894628e913/jpcmp3/d2/050/201/LOZPEXCAYKBRMWOECZKGMHPRLE.mp3</url>
+        </track>
+        <track>
+          <number>3</number>
+          <url mimetype="audio/mpeg">https://mp31.phononet.de/jpc265894628e913/jpcmp3/d2/050/201/LOZPEXCAYKBRMWOECZKGMPXYEH.mp3</url>
+        </track>
+        <track>
+          <number>4</number>
+          <url mimetype="audio/mpeg">https://mp31.phononet.de/jpc265894628e913/jpcmp3/d2/050/201/LOZPEXCAYKBRMWOECZKGMPXEHC.mp3</url>
+        </track>
+        <track>
+          <number>5</number>
+          <url mimetype="audio/mpeg">https://mp31.phononet.de/jpc265894628e913/jpcmp3/d2/050/201/LOZPEXCAYKBRMWOECZKGMPERWH.mp3</url>
+        </track>
+        <track>
+          <number>6</number>
+          <url mimetype="audio/mpeg">https://mp31.phononet.de/jpc265894628e913/jpcmp3/d2/050/201/LOZPEXCAYKBRMWOECZKGMPERXC.mp3</url>
+        </track>
+        <track>
+          <number>7</number>
+          <url mimetype="audio/mpeg">https://mp31.phononet.de/jpc265894628e913/jpcmp3/d2/050/201/LOZPEXCAYKBRMWOECZKGMHPEXL.mp3</url>
+        </track>
+        <track>
+          <number>8</number>
+          <url mimetype="audio/mpeg">https://mp31.phononet.de/jpc265894628e913/jpcmp3/d2/050/201/LOZPEXCAYKBRMWOECZKGMHLPRE.mp3</url>
+        </track>
+      </disk>
+    </soundinfos>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Vevey</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>September</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Utopia</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>Es schneit doch h&#xFC;t</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Mingma</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>Bruine</titel>
+        </track>
+        <track>
+          <number>7</number>
+          <titel>Riot</titel>
+        </track>
+        <track>
+          <number>8</number>
+          <titel>Mindarai</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>5545240</hnum>
+    <label>Love</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Olli Ahvenlahti</interpret>
+    <titel>The Poet</titel>
+    <info>+ Markku Johansson, Bertil Strandberg, Pekka P&amp;ouml;yry u.a.</info>
+    <jahr>1976</jahr>
+    <anzmed>1</anzmed>
+    <ean13>0711969126211</ean13>
+    <lagerbestand>lieferbar innerhalb einer Woche&lt;br /&gt;(soweit verf&#xFC;gbar beim Lieferanten)</lagerbestand>
+    <tidisplkern>The Poet</tidisplkern>
+    <preis>19.99</preis>
+    <voe_datum>14.11.2014</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/0711969126211.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>thumb</size>
+        <back>rear</back>
+        <url>https://www.jpc.de/image/h75/rear/0/0711969126211.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/0711969126211.jpg</url>
+        <width>1500</width>
+        <height>1500</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>rear</back>
+        <url>https://www.jpc.de/image/cover/rear/0/0711969126211.jpg</url>
+        <width>1500</width>
+        <height>1500</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/0711969126211.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>rear</back>
+        <url>https://www.jpc.de/image/h30/rear/0/0711969126211.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>The Poet</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Sunday's Stuff</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Aura</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>Sambatown (Rock Ridge)</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>A Day At The Zoo</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>Grandma's Rocking Chair</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>5320293</hnum>
+    <label>Blue Note</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Ambrose Akinmusire</interpret>
+    <titel>The Imagined Savior Is Far Easier To Paint</titel>
+    <info>*** Gatefold Cover</info>
+    <jahr>2014</jahr>
+    <anzmed>2</anzmed>
+    <ean13>0602537824571</ean13>
+    <lagerbestand>lieferbar innerhalb 1-2 Wochen&lt;br /&gt;(soweit verf&#xFC;gbar beim Lieferanten)</lagerbestand>
+    <tidisplkern>The Imagined Savior Is Far Easier To Paint</tidisplkern>
+    <preis>41.99</preis>
+    <voe_datum>08.07.2014</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/0602537824571.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/0602537824571.jpg</url>
+        <width>500</width>
+        <height>500</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/0602537824571.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Marie Christie</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>As We Fight (Willie Penrose)</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Our Basement (Ed) Feat. Becca Stevens</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>Vartha</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>The Beauty Of Dissolving Portraits</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>Asiam (Joan) Feat. Theo Bleckmann</titel>
+        </track>
+        <track>
+          <number>7</number>
+          <titel>Bubbles (John William Sublett)</titel>
+        </track>
+      </disk>
+      <disk>
+        <number>2</number>
+        <track>
+          <number>1</number>
+          <titel>Memo (G. Learson)</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Ceaseless Inexhaustible Child (Cyntoia Brown) Feat. Cold Specks</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Rollcall For Those Absent</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>J.E. Nilmah (Ecclesiastes 6:10)</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Inflatedbyspinning</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>Richard (Conduit)</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>4007708</hnum>
+    <label>Music On Vinyl</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Jan Akkerman</interpret>
+    <titel>Jan Akkerman (180g)</titel>
+    <jahr>1977</jahr>
+    <anzmed>1</anzmed>
+    <ean13>8718469534869</ean13>
+    <zusatztext>JAN AKKERMANs erstes Solo Album nach seinem Weggang von
+FOCUS ist aus gutem Grund selbstbetitelt - die musikalischen
+Kompromisse, die er mit FOCUS anscheinend machen musste, sind
+hier nicht vorhanden.&lt;br&gt;&lt;br&gt;
+Dies ist AKKERMANs blo&#xDF;gelegte Seele;
+wundersch&#xF6;ne Gitarren Arrangements und beeindruckende Soli
+treffen auf eine erstklassige Begleitband, einschlie&#xDF;lich des
+kraftvollen Bruno Castelucci am Schlagzeug (der ebenso auf
+verschiedenen Alben des deutschen Jazz Funk Helden PETER
+HERBOLZHEIMER auftritt) und des Bassisten Cees Van Der Laarse
+von BRAINBOW.&lt;br&gt;&lt;br&gt;
+Dies ist die erste Neuauflage von JanAkkerman
+seit seiner Erstver&#xF6;ffentlichung!</zusatztext>
+    <lagerbestand>umgehend lieferbar, Bestand beim Lieferanten vorhanden</lagerbestand>
+    <tidisplkern>Jan Akkerman (180g)</tidisplkern>
+    <preis>21.99</preis>
+    <voe_datum>14.02.2014</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/8718469534869.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/8718469534869.jpg</url>
+        <width>600</width>
+        <height>600</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/8718469534869.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Crackers</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Angel Watch</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Pavane</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>Streetwalker</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Skydancer</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>Floatin'</titel>
+        </track>
+        <track>
+          <number>7</number>
+          <titel>Gate To Europe</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>7277830</hnum>
+    <label>Morpheus</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Akku Quintet</interpret>
+    <titel>Molecules (180g)</titel>
+    <jahr>2014</jahr>
+    <anzmed>1</anzmed>
+    <ean13>7640138449499</ean13>
+    <zusatztext>&lt;h3&gt;Rezensionen&lt;/h3&gt;&lt;br&gt;
+
+&#xBB;Zwischen guten Grooves und eing&#xE4;ngigen Fusion-Fragmenten schleichen sich energetische, halluzinogene Schnipsel und Riffs. Letztere und die Art der vier, gut 40 Minuten dauernden St&#xFC;cke, sind eine bemerkenswerte Mischung aus verschiedenen akustischen Teilchen.&#xAB; Kultur-Port. de</zusatztext>
+    <lagerbestand>Artikel am Lager</lagerbestand>
+    <tidisplkern>Molecules (180g)</tidisplkern>
+    <preis>36.99</preis>
+    <voe_datum>17.04.2015</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h67/front/0/7640138449499.jpg</url>
+        <width>75</width>
+        <height>67</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/7640138449499.jpg</url>
+        <width>600</width>
+        <height>537</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h27/front/0/7640138449499.jpg</url>
+        <width>30</width>
+        <height>27</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Phase Transitions</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Freeze</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Fluid</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>Schneemann</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>8295468</hnum>
+    <label>Crammed</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Aksak Maboul</interpret>
+    <titel>Onze Danses Pour Combattre La Migraine</titel>
+    <info>* Marc Hollander, Paolo Radoni, Vincent Kenis, Ilona Chale u.a.</info>
+    <jahr>1977</jahr>
+    <anzmed>1</anzmed>
+    <ean13>0876623007364</ean13>
+    <zusatztext>Erfahrene und weitgereiste K&#xFC;nstler wie die beiden belgischen Musiker Marc Hollander und Vincent Kenis empfehlen gegen starke Kopfschmerzen eine ganz besondere Therapie: tanzen. Ob die wirklich hilft, ist nicht &#xFC;berliefert.&lt;br&gt;&lt;br&gt;
+Aber was man wei&#xDF;: Ihr im Fr&#xFC;hjahr des Jahres 1977 unter dem Projektnamen Aksak Maboul ver&#xF6;ffentlichtes Album &#xBB;Onze danses pour combattre la migraine&#xAB; ist ein musikalischer Meilenstein. Zur Freude vieler Sammler und Auskenner wird das Kultalbum nun als Deluxe-Vinyl wiederver&#xF6;ffentlicht, inklusive Download-Card f&#xFC;r drei exklusive Bonustracks und ausf&#xFC;hrlichen Linernotes. Nat&#xFC;rlich bei Crammed, schlie&#xDF;lich ist Marc Hollander der Labelgr&#xFC;nder.&lt;br&gt;&lt;br&gt;
+Wer noch nie von &#xBB;Onze danses pour combattre la migraine&#xAB; geh&#xF6;rt hat: Das Album fusioniert Jazz, Afro, Elektronik, Balkan Brass und Pr&#xE4;-Techno zu einer v&#xF6;llig eigenen Welt, die stellvertretend f&#xFC;r die vielen musikalischen Wege steht, die das Label Crammed in der Zwischenzeit eingeschlagen hat.</zusatztext>
+    <lagerbestand>lieferbar innerhalb einer Woche&lt;br /&gt;(soweit verf&#xFC;gbar beim Lieferanten)</lagerbestand>
+    <tidisplkern>Onze Danses Pour Combattre La Migraine</tidisplkern>
+    <preis>18.99</preis>
+    <voe_datum>11.09.2015</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h66/front/0/0876623007364.jpg</url>
+        <width>75</width>
+        <height>66</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/0876623007364.jpg</url>
+        <width>811</width>
+        <height>709</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h26/front/0/0876623007364.jpg</url>
+        <width>30</width>
+        <height>26</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Mercredi Matin</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>(Mit 1) Saure Gurke (Aus 1 Urwald Gelockt)</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Animeaux Velpeau</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>Milano Per Caso</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Fausto Coppi Arrive!</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>Chanter Est Sain</titel>
+        </track>
+        <track>
+          <number>7</number>
+          <titel>Son Of L'Idiot</titel>
+        </track>
+        <track>
+          <number>8</number>
+          <titel>DBB (Double Bind Baby)</titel>
+        </track>
+        <track>
+          <number>9</number>
+          <titel>Cuic Steppe</titel>
+        </track>
+        <track>
+          <number>10</number>
+          <titel>Tous Les Trucs Qu'il Y A L&#xE0; Dehors</titel>
+        </track>
+        <track>
+          <number>11</number>
+          <titel>Ciobane</titel>
+        </track>
+        <track>
+          <number>12</number>
+          <titel>The Mooche</titel>
+        </track>
+        <track>
+          <number>13</number>
+          <titel>Vapona, Not Glue</titel>
+        </track>
+        <track>
+          <number>14</number>
+          <titel>Glympz</titel>
+        </track>
+        <track>
+          <number>15</number>
+          <titel>Three Epileptic Folk Dances</titel>
+        </track>
+        <track>
+          <number>16</number>
+          <titel>Autre Chose D' Autre</titel>
+        </track>
+        <track>
+          <number>17</number>
+          <titel>Mastoul Alakepak</titel>
+        </track>
+        <track>
+          <number>18</number>
+          <titel>Comme On A Dit</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>1548724</hnum>
+    <label>Wax Time</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Al Cohn, Bill Perkins &amp; Richie Kamuca</interpret>
+    <titel>The Brothers! (180g) (Limited Edition)</titel>
+    <jahr>1955</jahr>
+    <anzmed>1</anzmed>
+    <ean13>8436028698851</ean13>
+    <lagerbestand>lieferbar innerhalb 1-2 Wochen&lt;br /&gt;(soweit verf&#xFC;gbar beim Lieferanten)</lagerbestand>
+    <tidisplkern>The Brothers! (180g) (Limited Edition)</tidisplkern>
+    <preis>19.99</preis>
+    <voe_datum>15.11.2011</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/8436028698851.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/8436028698851.jpg</url>
+        <width>559</width>
+        <height>557</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/8436028698851.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Blixed</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>Kim's Kaper</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Rolling Stone</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>Sioux Zan</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>The Walrus</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>Blue Skies</titel>
+        </track>
+        <track>
+          <number>7</number>
+          <titel>Gay Blade</titel>
+        </track>
+        <track>
+          <number>8</number>
+          <titel>Three Of A Kind</titel>
+        </track>
+        <track>
+          <number>9</number>
+          <titel>Hags!</titel>
+        </track>
+        <track>
+          <number>10</number>
+          <titel>Pro-Ex</titel>
+        </track>
+        <track>
+          <number>11</number>
+          <titel>Strange Again</titel>
+        </track>
+        <track>
+          <number>12</number>
+          <titel>Cap Snapper</titel>
+        </track>
+        <track>
+          <number>13</number>
+          <titel>Memories Of You</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+  <artikel>
+    <arttyp>1</arttyp>
+    <hnum>6254946</hnum>
+    <label>Rune Grammofon</label>
+    <typnum>1</typnum>
+    <genre>588</genre>
+    <interpret>Albatrosh</interpret>
+    <titel>Night Owl (Limited Edition) (LP + CD)</titel>
+    <info>* Eyolf Dale, Andre Roligheten</info>
+    <jahr>2014</jahr>
+    <anzmed>1</anzmed>
+    <ean13>7033660031650</ean13>
+    <lagerbestand>umgehend lieferbar, Bestand beim Lieferanten vorhanden</lagerbestand>
+    <tidisplkern>Night Owl (Limited Edition) (LP + CD)</tidisplkern>
+    <preis>23.99</preis>
+    <voe_datum>23.01.2015</voe_datum>
+    <artikelart>LP</artikelart>
+    <images>
+      <image>
+        <size>thumb</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h75/front/0/7033660031650.jpg</url>
+        <width>75</width>
+        <height>75</height>
+      </image>
+      <image>
+        <size>cover</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/cover/front/0/7033660031650.jpg</url>
+        <width>600</width>
+        <height>600</height>
+      </image>
+      <image>
+        <size>blot</size>
+        <back>front</back>
+        <url>https://www.jpc.de/image/h30/front/0/7033660031650.jpg</url>
+        <width>30</width>
+        <height>30</height>
+      </image>
+    </images>
+    <trackinfos>
+      <disk>
+        <number>1</number>
+        <track>
+          <number>1</number>
+          <titel>Duvet Day</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>The Sheriff</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Nut Job</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>Early Bird</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Wolf Whistle</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>Hula Hoop</titel>
+        </track>
+        <track>
+          <number>7</number>
+          <titel>The Liger</titel>
+        </track>
+        <track>
+          <number>8</number>
+          <titel>Night Owl</titel>
+        </track>
+      </disk>
+      <disk>
+        <number>2</number>
+        <track>
+          <number>1</number>
+          <titel>Duvet Day</titel>
+        </track>
+        <track>
+          <number>2</number>
+          <titel>The Sheriff</titel>
+        </track>
+        <track>
+          <number>3</number>
+          <titel>Nut Job</titel>
+        </track>
+        <track>
+          <number>4</number>
+          <titel>Early Bird</titel>
+        </track>
+        <track>
+          <number>5</number>
+          <titel>Wolf Whistle</titel>
+        </track>
+        <track>
+          <number>6</number>
+          <titel>Hula Hoop</titel>
+        </track>
+        <track>
+          <number>7</number>
+          <titel>The Liger</titel>
+        </track>
+        <track>
+          <number>8</number>
+          <titel>Night Owl</titel>
+        </track>
+      </disk>
+    </trackinfos>
+  </artikel>
+</artikelliste>
