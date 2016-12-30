@@ -48,10 +48,10 @@ class SqlTree {
 	const QUERYS = array(
 			'SELECT_WHERE_ID' => 'SELECT :id, :rgt, :lft, :parent, :name FROM :table WHERE :id=:value_id LIMIT 0,1',
 			'SELECT_TOP_RGT' => 'SELECT :rgt FROM :table ORDER BY :rgt DESC LIMIT 0,1',
-			'UPDATE_PARENTS_RGT' => 'UPDATE :table SET :rgt = :rgt +2 WHERE :rgt >= :value_rgt',
+	        'SELECT_COUNT_ENTRIES' => 'SELECT n.:name, COUNT(*)-1 AS level, ROUND ((n.rgt - n.lft - 1) / 2) AS offspring FROM :table AS n, :table AS p WHERE n.:lft BETWEEN p.:lft AND p.:rgt GROUP BY n.:lft ORDER BY n.:lft;',
+	        'UPDATE_PARENTS_RGT' => 'UPDATE :table SET :rgt = :rgt +2 WHERE :rgt >= :value_rgt',
 			'UPDATE_PARENTS_LFT' => 'UPDATE :table SET :lft = :lft +2 WHERE :lft > :value_rgt',
 			'INSERT_NODE' => 'INSERT INTO :table (:lft, :rgt, :parent, :name) VALUES(:value_lft, :value_rgt, :value_parent, :value_name)',
-	        'SELECT_COUNT_ENTRIES' => 'SELECT COUNT(:rgt) AS entries FROM :table ORDER BY :rgt DESC LIMIT 0,1'    
 	);
 	
 	/**
@@ -122,12 +122,20 @@ class SqlTree {
 	 * @param int $id sql table row id
 	 * @return mixed[]
 	 */
-	public function getNodeById($id){
+    public function getNodeById($id){
 	    $this->statements['select_where_id']->bindParam(':value_id', $id);
 	    $this->statements['select_where_id']->execute();
 	    return $this->statements['select_where_id']->fetch ( \PDO::FETCH_ASSOC );
 	}
-
+	
+	/**
+	 * 
+	 */
+	public function getTree(){
+	    $this->statements['select_tree']->execute();
+        return $this->statements['select_tree']->fetchAll( \PDO::FETCH_ASSOC );
+	}
+	
 	/**
 	 * Returns an array with error messages
 	 *

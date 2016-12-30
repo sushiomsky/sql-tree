@@ -3,10 +3,8 @@ use Suchomsky\SqlTree\SqlTree;
 
 abstract class SqlTreeSetup extends PHPUnit_Extensions_Database_TestCase
 {
-    // only instantiate pdo once for test clean-up/fixture load
     static private $pdo = null;
 
-    // only instantiate PHPUnit_Extensions_Database_DB_IDatabaseConnection once per test
     private $conn = null;
 
     final public function getConnection()
@@ -55,6 +53,10 @@ class SqlTreeTest extends SqlTreeSetup
     	$this->assertTrue($sqlTree->validateTree());
     	$sqlTree->insertNode('brothernode');
     	$this->assertTrue($sqlTree->validateTree());
+    	
+    	$xmlTree = new XmlTree('https://www.jpc.de/jpcng/home/xml/-/task/search/dosearch/1/k/jazz/medium/LP/searchcount/40', $dbCreds);
     }
+    
+    
 }
 ?>
