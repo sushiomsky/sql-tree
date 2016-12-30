@@ -1,7 +1,7 @@
 <?php
 use Suchomsky\SqlTree\SqlTree;
 
-abstract class GenericDatabaseTestCase extends PHPUnit_Extensions_Database_TestCase
+abstract class SqlTreeSetup extends PHPUnit_Extensions_Database_TestCase
 {
     // only instantiate pdo once for test clean-up/fixture load
     static private $pdo = null;
@@ -30,9 +30,9 @@ abstract class GenericDatabaseTestCase extends PHPUnit_Extensions_Database_TestC
     }
 }
 
-class SqlTreeTest extends GenericDatabaseTestCase
+class SqlTreeTest extends SqlTreeSetup
 {
-    public function testCreateQueryTable()
+    public function testInitialDataStructure()
     {
     	$dataSet = $this->getConnection()->createDataSet(['nested_set']);
         $expectedDataSet = $this->createMySQLXMLDataSet('./tests/_files/treetable.xml');
@@ -41,14 +41,20 @@ class SqlTreeTest extends GenericDatabaseTestCase
     
     public function testTreeModifier(){
     	$dbCreds['host'] = 'localhost';
-    	$dbCreds['db'] = 'sqltree';
-    	$dbCreds['user'] = 'root';
-    	$dbCreds['password'] = '1234';
+    	$dbCreds['db'] = $GLOBALS['DB_DBNAME'];
+    	$dbCreds['user'] = $GLOBALS['DB_USER'];
+    	$dbCreds['password'] = $GLOBALS['DB_PASSWD'];
     	
-    	$sqlTree = new SqlTree(SqlTree::connectDb($dbCreds));
+    	$pdo = SqlTree::connectDb($dbCreds);
+    	$sqlTree = new SqlTree($pdo);
+
+    	$this->assertTrue($sqlTree->validateTree());
     	$sqlTree->insertRootNode('rootnode');
+    	$this->assertTrue($sqlTree->validateTree());
     	$sqlTree->insertSubNode('subnode');
+    	$this->assertTrue($sqlTree->validateTree());
     	$sqlTree->insertNode('brothernode');
+    	$this->assertTrue($sqlTree->validateTree());
     }
 }
 ?>

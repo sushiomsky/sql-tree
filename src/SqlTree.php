@@ -1,6 +1,6 @@
 <?php
 /**
- * SqlTree.php store the SqlTree class
+ * SqlTree.php stores the SqlTree class
  *
  * @name SqlTree.php
  *
@@ -18,8 +18,7 @@ namespace Suchomsky\SqlTree;
  * purpose: Manages a nested sets tree structure in a SQL DB
  * Focus: Data/tree consistency
  *
- * @version 0.1
- * @todo
+ * @todo alot..
  */
 class SqlTree {
 
@@ -51,7 +50,8 @@ class SqlTree {
 			'SELECT_TOP_RGT' => 'SELECT :rgt FROM :table ORDER BY :rgt DESC LIMIT 0,1',
 			'UPDATE_PARENTS_RGT' => 'UPDATE :table SET :rgt = :rgt +2 WHERE :rgt >= :value_rgt',
 			'UPDATE_PARENTS_LFT' => 'UPDATE :table SET :lft = :lft +2 WHERE :lft > :value_rgt',
-			'INSERT_NODE' => 'INSERT INTO :table (:lft, :rgt, :parent, :name) VALUES(:value_lft, :value_rgt, :value_parent, :value_name)'
+			'INSERT_NODE' => 'INSERT INTO :table (:lft, :rgt, :parent, :name) VALUES(:value_lft, :value_rgt, :value_parent, :value_name)',
+	        'SELECT_COUNT_ENTRIES' => 'SELECT COUNT(:rgt) AS entries FROM :table ORDER BY :rgt DESC LIMIT 0,1'    
 	);
 	
 	/**
@@ -115,7 +115,7 @@ class SqlTree {
 		}
 		return $pdo;
 	}
-	
+
 	/**
 	 * Get a node by id
 	 *
@@ -123,11 +123,20 @@ class SqlTree {
 	 * @return mixed[]
 	 */
 	public function getNodeById($id){
-		$this->statements['select_where_id']->bindParam(':value_id', $id);
-		$this->statements['select_where_id']->execute();
-		return $this->statements['select_where_id']->fetch ( \PDO::FETCH_ASSOC );
+	    $this->statements['select_where_id']->bindParam(':value_id', $id);
+	    $this->statements['select_where_id']->execute();
+	    return $this->statements['select_where_id']->fetch ( \PDO::FETCH_ASSOC );
 	}
 
+	/**
+	 * Returns an array with error messages
+	 *
+	 * @return mixed[]
+	 */
+	public function getErrors(){
+	    return $this->errors;
+	}
+	
 	/**
 	 * Add a node at current position at the same level as current node
 	 *
@@ -184,6 +193,44 @@ class SqlTree {
 	}
 
 	/**
+	 * Validates the table tree structure and commits/rolls back the transaction
+	 * @return boolean
+	 */
+	public function validateTree(){
+	    $this->statements['select_count_entries']->execute();
+	    $entries = $this->statements['select_count_entries']->fetch ( \PDO::FETCH_ASSOC );
+	    if ((round($this->selectRgtOrderDesc() / 2)) == $entries['entries']){
+	        return true;
+	    }else {
+	        return false;
+	    }
+	}
+
+	/**
+	 * puts the cursor a level higher
+	 * @return boolean
+	 */
+	public function levelUp(){
+	    array_top($this->nodePointer);
+	}
+	
+	/**
+	 * 
+	 * commit/rollback the transaction
+	 * @return boolean
+	 */
+	private function transactionHandler(){
+	    if (count($this->errors) > 0 && $this->pdo->inTransaction()) {
+	       $this->pdo->rollBack();
+	       $this->closeConnection();
+	       return false;
+	    }elseif ($this->pdo->inTransaction()) {
+	        $this->pdo->commit();
+	    }
+	    return true;
+	}
+	
+	/**
 	 * prepares pdo statements and bind static params such as tablename and column names
 	 *
 	 * @return void
@@ -234,17 +281,18 @@ class SqlTree {
 	}
 	
 	/**
-	 * close database connection
+	 *  closes the database connection
 	 *
 	 * @return void
 	 */
 	private function closeConnection() {
-		if (count($this->errors) > 0) {
-			$this->pdo->rollBack();
-			foreach ($this->errors as $error){
-			    echo "Error: ".$error." \n";
-			}
-		}
 		$this->pdo = null;
+	}
+	
+	/**
+	 * just in case there is an uncommited transaction or open database connection
+	 */
+	function __destruct(){
+	    $this->closeConnection();
 	}
 }
