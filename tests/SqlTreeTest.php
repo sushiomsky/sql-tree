@@ -63,7 +63,8 @@ class SqlTreeTest extends SqlTreeSetup
     	$dbCreds['password'] = $GLOBALS['DB_PASSWD'];
     	
     	$pdo = SqlTree::connectDb($dbCreds);
-    	$xmlTree = new XmlTree('./tests/_files/xmlimport.xml', $pdo);    	 
+      	$xmlTree = new XmlTree('./tests/_files/xmlimport.xml', $pdo);
+    	$this->assertTrue($xmlTree->validateTree());
     }
     
     

@@ -47,7 +47,7 @@ class SqlTree {
 	 */
 	const QUERYS = array(
 			'SELECT_WHERE_ID' => 'SELECT :id, :rgt, :lft, :parent, :name FROM :table WHERE :id=:value_id LIMIT 0,1',
-			'SELECT_TOP_RGT' => 'SELECT :rgt FROM :table ORDER BY :rgt DESC LIMIT 0,1',
+			'SELECT_TOP_RGT' => 'SELECT :rgt FROM :table ORDER BY :rgt DESC LIMIT 0, 1',
 	        'SELECT_COUNT_ENTRIES' => 'SELECT n.:name, COUNT(*)-1 AS level, ROUND ((n.rgt - n.lft - 1) / 2) AS offspring FROM :table AS n, :table AS p WHERE n.:lft BETWEEN p.:lft AND p.:rgt GROUP BY n.:lft ORDER BY n.:lft;',
 	        'UPDATE_PARENTS_RGT' => 'UPDATE :table SET :rgt = :rgt +2 WHERE :rgt >= :value_rgt',
 			'UPDATE_PARENTS_LFT' => 'UPDATE :table SET :lft = :lft +2 WHERE :lft > :value_rgt',
@@ -71,7 +71,7 @@ class SqlTree {
 	const DB_CREDS = array(
 	    'host' => 'localhost',
 	    'db' => 'sqltree',
-	    'user' => 'sqltree',
+	    'user' => 'root',
 	    'password' => '1234');
 	
 	/**
@@ -110,7 +110,7 @@ class SqlTree {
 		try {
 			$pdo = new \PDO( 'mysql:host=' . $dbCreds['host'] . ';dbname=' . $dbCreds['db'], $dbCreds['user'], $dbCreds['password'] );
 		} catch (\PDOException $e) {
-		    $this->errors[] = $e->getMessage ();
+		    echo $e->getMessage();
 			$pdo = null;
 		}
 		return $pdo;
