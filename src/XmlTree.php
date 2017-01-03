@@ -11,54 +11,58 @@
  */
 namespace Suchomsky\SqlTree;
 
+use XMLReader;
 class XmlTree extends SqlTree {
 
-    /**
-     *
-     * @var Object $xmlReader xmlReader object
-     */
-    protected $xmlReader;
+	/**
+	 * @var Object xmlReader object
+	 */
+	protected $xmlReader;
 
-    /**
-     *
-     * @var String $xmlUrl path to a xml document
-     */
-    protected $xmlUrl;
+	/**
+	 * @var String path to a xml document
+	 */
+	protected $xmlUrl;
 
-    function __construct($xmlUrl, &$pdo, $columns = NULL){
-        parent::__construct($pdo, $columns);
+	/**
+	 * @param unknown $xmlUrl xmlresource
+	 * @param unknown $pdo
+	 * @param unknown|null $columns
+	 */
+	function __construct($xmlUrl, &$pdo, $columns = null){
+		parent::__construct($pdo, $columns);
 
-        $this->xmlReader = $xmlUrl;
-        $this->xmlReader = new \XmlReader();
-        $this->xmlReader->open($xmlUrl);
+		$this->xmlReader = $xmlUrl;
+		$this->xmlReader = new XmlReader();
+		$this->xmlReader->open($xmlUrl);
 
-        $this->processElements();
-    }
+		$this->processElements();
+	}
 
-    private function processElements(){
-        $depth = 0;
-        while ($this->xmlReader->read()) {
-            switch($this->xmlReader->nodeType){
+	private function processElements(){
+		$depth = 0;
+		while ($this->xmlReader->read()) {
+			switch($this->xmlReader->nodeType){
 
-                case(\XMLReader::END_ELEMENT):
-                    $this->levelUp();
-                    $depth--;
-                    break;
+				case (XMLReader::END_ELEMENT):
+					$this->levelUp();
+					$depth--;
+	    break;
 
-                case(\XMLREADER::ELEMENT):
-                    if ($depth == 0) {
-                        $this->insertRootNode($this->xmlReader->name);	;
-                    }else {
-                        $this->insertSubNode($this->xmlReader->name);
-                    }
-                    $depth++;
-                    break;
+				case (XMLREADER::ELEMENT):
+					if ($depth == 0) {
+						$this->insertRootNode($this->xmlReader->name);
+					}else {
+						$this->insertSubNode($this->xmlReader->name);
+					}
+					$depth++;
+	    break;
 
-                case(\XMLREADER::TEXT):
-                    $this->insertSubNode($this->xmlReader->value);
-                    break;
-            }
-        }
-    }
+				case (XMLREADER::TEXT):
+					$this->insertSubNode($this->xmlReader->value);
+	    break;
+			}
+		}
+	}
+
 }
-?>

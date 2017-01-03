@@ -31,7 +31,7 @@
 		"post-update-cmd": [
 			"export PATH=$PATH:`pwd`/vendor/bin",
 			"rm -rf docs/*",
-			"phpdoc -d ./src -t ./docs",
+			"phpdoc -d ./src -t ./docs --template=\"responsive\"",
 			"sniff src/ -f",
 			"phpunit"
 		],

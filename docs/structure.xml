@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project title="API Documentation" version="2.8.5">
+  <partials/>
+  <file path="XmlTree.php" generated-path="XmlTree.html" hash="d4f9bf878d19d07c9716e5f1204fb53a" package="Default">
+    <docblock line="0">
+      <description>class: XmlTree
+purpose: import an xml structure into a sql NestedSet structure
+Focus: Data/tree consistency</description>
+      <long-description></long-description>
+      <tag name="copyright" line="0" description="Copyright (C) 2001-2016 Webschreinerei"/>
+      <tag name="author" line="0" description="Dennis Suchomsky dennis.suchomsky@gmail.com"/>
+      <tag name="license" line="0" description="GPL" link="http://opensource.org/licenses/GPL-3.0"/>
+      <tag name="license" line="0" description="GNU Public License" link="http://opensource.org/licenses/gpl-license.php"/>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="XmlReader">\XmlReader</namespace-alias>
+    <source>eJyNU01T2zAQPdu/Yg+ZTgwkTjn0YAqlQ1wukDIkTDl0hlHkJXaRJSHJCRma/96V80WCZ4oPtnf19u2+3dXXbzrXYXxwEMIBcMGsTeC+FCOD6D26MlpZTKAotTIOmISXUoB1puKuMgiFdAoY2GcBA7QOsyG67bGn+KF4RaR95ljsiBa4krYgqORzOveQc6703BST3MHF5q99EcFxr/e5c9z7/AV+4djy3GAhkV51EKtcrgz0UcrCwrDiuSrt0xyy2tG1a8f5pGSF6HJV1mGi4CgtwuXN1Y6dO6eTOFaaLFUZjl1lJvHq1MYTLToro0stg8vBHdxUY3LB1dJNbHEoWYlWM47bgn4Pn+t+noRhRXmou7fIMjQnS/P6at9Mv/fTW0LX41hPA/CFWpaR0CUbvIZh4OcWeBFTZuDn+A9y5+ezJARVOzwgDgNtlCMLM2i9bCvYoxg6U8gJaOZyqOfqh53RAEuUzUR3RuywaGZYCZV8kmom1whPY3DZ1UaYzlSD/6+shIAWV6IqpV2lf6wkd4WS8PDgF6netPYqzxF88lRHmxg4Bc8RvYZBQNQkIkl24nbQkVcStFxe2M7Zto2nW6GNpxJn26G2oyZU58yv1brMnTzUTo7WpgJ9j20dvwh9m4spcwgbve+AXlQrQ02zOoWeTzvLC4HQfp/d0LcdReBDAjsrHM8bUFJlOJprjPxq0cMZLWR7s6BJkg76D+lVep0ORlFSQ9YqBE5R3Oml+mBdV6dDJtAzpgKeTvZZ6z0n1l3G4pEUrGSRrlXR21QFXTXjbpVyA6q3SQZdwXUdCxQWmxmG1fgjBG/1HB5+RM8ovd9vz/8yTpmo6pRvyFfJF/U6LMJ/e+K/Sg==</source>
+  </file>
+  <file path="TreeAdapter.php" generated-path="TreeAdapter.html" hash="524d0240f4a2dab47447e4c65ffe58cf" package="Default">
+    <docblock line="0">
+      <description>class: TreeAdapter
+purpose: batch processing &amp; transaction handling
+Focus: Data/tree consistency</description>
+      <long-description></long-description>
+      <tag name="copyright" line="0" description="Copyright (C) 2001-2016 Webschreinerei"/>
+      <tag name="author" line="0" description="Dennis Suchomsky dennis.suchomsky@gmail.com"/>
+      <tag name="license" line="0" description="GPL" link="http://opensource.org/licenses/GPL-3.0"/>
+      <tag name="license" line="0" description="GNU Public License" link="http://opensource.org/licenses/gpl-license.php"/>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="SqlTree">\Suchomsky\SqlTree\SqlTree</namespace-alias>
+    <class final="false" abstract="false" namespace="Suchomsky\SqlTree" line="16" package="Default">
+      <extends>\Suchomsky\SqlTree\SqlTree</extends>
+      <name>TreeAdapter</name>
+      <full_name>\Suchomsky\SqlTree\TreeAdapter</full_name>
+      <docblock line="16">
+        <description>SqlTree Tree data structure in a SQL Table.</description>
+        <long-description>To create and manage a nested set tree structure in a SQL Database.
+Infinite child nodes possible with linear runtime.
+The objects created have a nodepointer, you navigate either wit the insert functions or with the levelUp().
+Focus: Data/tree consistency</long-description>
+        <tag name="package" line="16" description="Default"/>
+        <tag name="inherited_from" description="\Suchomsky\SqlTree\SqlTree" refers="\Suchomsky\SqlTree\SqlTree" link="/classes/Suchomsky.SqlTree.SqlTree.html"/>
+      </docblock>
+      <constant namespace="Suchomsky\SqlTree" line="53" package="Default">
+        <name>QUERYS</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::QUERYS</full_name>
+        <value>array('SELECT_WHERE_ID' =&gt; 'SELECT :id, :rgt, :lft, :parent, :name FROM :table WHERE :id=:value_id LIMIT 0,1', 'SELECT_TOP_RGT' =&gt; 'SELECT :rgt FROM :table ORDER BY :rgt DESC LIMIT 0, 1', 'SELECT_COUNT_ENTRIES' =&gt; 'SELECT n.:name, COUNT(*)-1 AS level, ROUND ((n.rgt - n.lft - 1) / 2) AS offspring FROM :table AS n, :table AS p WHERE n.:lft BETWEEN p.:lft AND p.:rgt GROUP BY n.:lft ORDER BY n.:lft;', 'UPDATE_PARENTS_RGT' =&gt; 'UPDATE :table SET :rgt = :rgt +2 WHERE :rgt &gt;= :value_rgt', 'UPDATE_PARENTS_LFT' =&gt; 'UPDATE :table SET :lft = :lft +2 WHERE :lft &gt; :value_rgt', 'INSERT_NODE' =&gt; 'INSERT INTO :table (:lft, :rgt, :parent, :name) VALUES(:value_lft, :value_rgt, :value_parent, :value_name)')</value>
+        <docblock line="53">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="53" description="&lt;p&gt;QUERYS Sql querys nescessary to manage the tree structure&lt;/p&gt;" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </constant>
+      <constant namespace="Suchomsky\SqlTree" line="65" package="Default">
+        <name>COLUMNS</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::COLUMNS</full_name>
+        <value>array('table' =&gt; 'nested_set', 'id' =&gt; 'id', 'lft' =&gt; 'lft', 'rgt' =&gt; 'rgt', 'parent' =&gt; 'parent')</value>
+        <docblock line="65">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="65" description="&lt;p&gt;default table and column names.&lt;/p&gt;" type="array&lt;mixed,mixed&gt;" variable="">
+            <type>array&lt;mixed,mixed&gt;</type>
+          </tag>
+        </docblock>
+      </constant>
+      <constant namespace="Suchomsky\SqlTree" line="75" package="Default">
+        <name>DB_CREDS</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::DB_CREDS</full_name>
+        <value>array('host' =&gt; 'localhost', 'db' =&gt; 'sqltree', 'user' =&gt; 'root', 'password' =&gt; '1234')</value>
+        <docblock line="75">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="75" description="&lt;p&gt;default database credentials.&lt;/p&gt;" type="array&lt;mixed,mixed&gt;" variable="">
+            <type>array&lt;mixed,mixed&gt;</type>
+          </tag>
+        </docblock>
+      </constant>
+      <property static="false" visibility="private" namespace="Suchomsky\SqlTree" line="33" package="Default">
+        <name>$pdo</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::pdo</full_name>
+        <default>null</default>
+        <docblock line="33">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="33" description="&lt;p&gt;PDO database connection object&lt;/p&gt;" type="\PDO|null" variable="">
+            <type>\PDO</type>
+            <type>null</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Suchomsky\SqlTree" line="38" package="Default">
+        <name>$statements</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::statements</full_name>
+        <default>null</default>
+        <docblock line="38">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="38" description="&lt;p&gt;pdo prepared statements&lt;/p&gt;" type="array|null" variable="">
+            <type>array</type>
+            <type>null</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Suchomsky\SqlTree" line="43" package="Default">
+        <name>$nodePointer</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::nodePointer</full_name>
+        <default>null</default>
+        <docblock line="43">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="43" description="&lt;p&gt;stack of node id's last element is the id of the last node inserted&lt;/p&gt;" type="array|null" variable="">
+            <type>array</type>
+            <type>null</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Suchomsky\SqlTree" line="48" package="Default">
+        <name>$errors</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::errors</full_name>
+        <default>null</default>
+        <docblock line="48">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="48" description="&lt;p&gt;error messages&lt;/p&gt;" type="array|null" variable="">
+            <type>array</type>
+            <type>null</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Suchomsky\SqlTree" line="17" package="Default">
+        <name>__construct</name>
+        <full_name>\Suchomsky\SqlTree\TreeAdapter::__construct()</full_name>
+        <docblock line="17">
+          <description>Validation of database/pdo object &amp; table columns closes connection on error</description>
+          <long-description></long-description>
+          <tag name="inherited_from" description="\Suchomsky\SqlTree\SqlTree::__construct()" refers="\Suchomsky\SqlTree\SqlTree::__construct()" link="/classes/Suchomsky.SqlTree.SqlTree.html#method___construct"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$dbCreds</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$columns</name>
+          <default></default>
+          <type>array|null</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Suchomsky\SqlTree" line="20" package="Default">
+        <name>createRootNode</name>
+        <full_name>\Suchomsky\SqlTree\TreeAdapter::createRootNode()</full_name>
+        <docblock line="20">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$name</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Suchomsky\SqlTree" line="22" package="Default">
+        <name>createSubNode</name>
+        <full_name>\Suchomsky\SqlTree\TreeAdapter::createSubNode()</full_name>
+        <docblock line="22">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Suchomsky\SqlTree" line="24" package="Default">
+        <name>deleteNode</name>
+        <full_name>\Suchomsky\SqlTree\TreeAdapter::deleteNode()</full_name>
+        <docblock line="24">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Suchomsky\SqlTree" line="26" package="Default">
+        <name>getAllNodes</name>
+        <full_name>\Suchomsky\SqlTree\TreeAdapter::getAllNodes()</full_name>
+        <docblock line="26">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Suchomsky\SqlTree" line="28" package="Default">
+        <name>getChildren</name>
+        <full_name>\Suchomsky\SqlTree\TreeAdapter::getChildren()</full_name>
+        <docblock line="28">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Suchomsky\SqlTree" line="30" package="Default">
+        <name>getParent</name>
+        <full_name>\Suchomsky\SqlTree\TreeAdapter::getParent()</full_name>
+        <docblock line="30">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Suchomsky\SqlTree" line="32" package="Default">
+        <name>getParents</name>
+        <full_name>\Suchomsky\SqlTree\TreeAdapter::getParents()</full_name>
+        <docblock line="32">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Suchomsky\SqlTree" line="34" package="Default">
+        <name>getRootNodes</name>
+        <full_name>\Suchomsky\SqlTree\TreeAdapter::getRootNodes()</full_name>
+        <docblock line="34">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Suchomsky\SqlTree" line="36" package="Default">
+        <name>moveTree</name>
+        <full_name>\Suchomsky\SqlTree\TreeAdapter::moveTree()</full_name>
+        <docblock line="36">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Suchomsky\SqlTree" line="38" package="Default">
+        <name>pickNode</name>
+        <full_name>\Suchomsky\SqlTree\TreeAdapter::pickNode()</full_name>
+        <docblock line="38">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Suchomsky\SqlTree" line="40" package="Default">
+        <name>updateParent</name>
+        <full_name>\Suchomsky\SqlTree\TreeAdapter::updateParent()</full_name>
+        <docblock line="40">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Suchomsky\SqlTree" line="87" package="Default">
+        <name>__construct</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::__construct()</full_name>
+        <docblock line="87">
+          <description>Validation of database/pdo object &amp; table columns closes connection on error</description>
+          <long-description></long-description>
+          <tag name="param" line="87" description="" type="\PDO" variable="$pdo">
+            <type>\PDO</type>
+          </tag>
+          <tag name="param" line="87" description="" type="array|null" variable="$columns">
+            <type>array</type>
+            <type>null</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="true">
+          <name>$pdo</name>
+          <default></default>
+          <type>\PDO</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$columns</name>
+          <default>null</default>
+          <type>array|null</type>
+        </argument>
+        <inherited_from>\Suchomsky\SqlTree\SqlTree</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Suchomsky\SqlTree" line="107" package="Default">
+        <name>connectDb</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::connectDb()</full_name>
+        <docblock line="107">
+          <description>Connects to the database and creates a \PDO object nescessary for the constructor</description>
+          <long-description></long-description>
+          <tag name="param" line="107" description="" type="\Suchomsky\SqlTree\unknown|null" variable="$dbCreds">
+            <type>\Suchomsky\SqlTree\unknown</type>
+            <type>null</type>
+          </tag>
+          <tag name="return" line="107" description="" type="NULL|\PDO">
+            <type>NULL</type>
+            <type>\PDO</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$dbCreds</name>
+          <default>null</default>
+          <type>\Suchomsky\SqlTree\unknown|null</type>
+        </argument>
+        <inherited_from>\Suchomsky\SqlTree\SqlTree</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Suchomsky\SqlTree" line="126" package="Default">
+        <name>getNodeById</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::getNodeById()</full_name>
+        <docblock line="126">
+          <description>Get a node by id</description>
+          <long-description></long-description>
+          <tag name="param" line="126" description="&lt;p&gt;sql table row id&lt;/p&gt;" type="integer" variable="$id">
+            <type>integer</type>
+          </tag>
+          <tag name="return" line="126" description="" type="array&lt;mixed,mixed&gt;">
+            <type>array&lt;mixed,mixed&gt;</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$id</name>
+          <default></default>
+          <type>integer</type>
+        </argument>
+        <inherited_from>\Suchomsky\SqlTree\SqlTree</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Suchomsky\SqlTree" line="135" package="Default">
+        <name>getTree</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::getTree()</full_name>
+        <docblock line="135">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <inherited_from>\Suchomsky\SqlTree\SqlTree</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Suchomsky\SqlTree" line="145" package="Default">
+        <name>getErrors</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::getErrors()</full_name>
+        <docblock line="145">
+          <description>Returns an array with error messages.</description>
+          <long-description></long-description>
+          <tag name="return" line="145" description="" type="array&lt;mixed,mixed&gt;">
+            <type>array&lt;mixed,mixed&gt;</type>
+          </tag>
+        </docblock>
+        <inherited_from>\Suchomsky\SqlTree\SqlTree</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Suchomsky\SqlTree" line="155" package="Default">
+        <name>insertNode</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::insertNode()</full_name>
+        <docblock line="155">
+          <description>Add a node at current position at the same level as current node.</description>
+          <long-description></long-description>
+          <tag name="param" line="155" description="&lt;p&gt;Nodename&lt;/p&gt;" type="string" variable="$name">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="155" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$name</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\Suchomsky\SqlTree\SqlTree</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Suchomsky\SqlTree" line="173" package="Default">
+        <name>insertSubNode</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::insertSubNode()</full_name>
+        <docblock line="173">
+          <description>Add a Subnode at current position.</description>
+          <long-description></long-description>
+          <tag name="param" line="173" description="&lt;p&gt;Nodename&lt;/p&gt;" type="string" variable="$name">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="173" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$name</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\Suchomsky\SqlTree\SqlTree</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Suchomsky\SqlTree" line="191" package="Default">
+        <name>insertRootNode</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::insertRootNode()</full_name>
+        <docblock line="191">
+          <description>Add a root node</description>
+          <long-description></long-description>
+          <tag name="param" line="191" description="&lt;p&gt;Nodename&lt;/p&gt;" type="string" variable="$name">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="191" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$name</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\Suchomsky\SqlTree\SqlTree</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Suchomsky\SqlTree" line="209" package="Default">
+        <name>validateTree</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::validateTree()</full_name>
+        <docblock line="209">
+          <description>Validates the table tree structure and commits/rolls back the transaction</description>
+          <long-description></long-description>
+          <tag name="return" line="209" description="" type="boolean">
+            <type>boolean</type>
+          </tag>
+        </docblock>
+        <inherited_from>\Suchomsky\SqlTree\SqlTree</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Suchomsky\SqlTree" line="224" package="Default">
+        <name>levelUp</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::levelUp()</full_name>
+        <docblock line="224">
+          <description>puts the cursor a level higher.</description>
+          <long-description></long-description>
+          <tag name="return" line="224" description="" type="boolean">
+            <type>boolean</type>
+          </tag>
+        </docblock>
+        <inherited_from>\Suchomsky\SqlTree\SqlTree</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Suchomsky\SqlTree" line="233" package="Default">
+        <name>transactionHandler</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::transactionHandler()</full_name>
+        <docblock line="233">
+          <description>commit/rollback the transaction.</description>
+          <long-description></long-description>
+          <tag name="return" line="233" description="" type="boolean">
+            <type>boolean</type>
+          </tag>
+        </docblock>
+        <inherited_from>\Suchomsky\SqlTree\SqlTree</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Suchomsky\SqlTree" line="250" package="Default">
+        <name>prepareStatements</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::prepareStatements()</full_name>
+        <docblock line="250">
+          <description>prepares pdo statements and bind static params such as tablename and column names.</description>
+          <long-description></long-description>
+          <tag name="return" line="250" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+        <inherited_from>\Suchomsky\SqlTree\SqlTree</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Suchomsky\SqlTree" line="278" package="Default">
+        <name>selectRgtOrderDesc</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::selectRgtOrderDesc()</full_name>
+        <docblock line="278">
+          <description></description>
+          <long-description></long-description>
+          <tag name="return" line="278" description="$columns['rgt'] highest rgt field in table." type="integer">
+            <type>integer</type>
+          </tag>
+        </docblock>
+        <inherited_from>\Suchomsky\SqlTree\SqlTree</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Suchomsky\SqlTree" line="290" package="Default">
+        <name>updateWhereLftRgtHigherEqual</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::updateWhereLftRgtHigherEqual()</full_name>
+        <docblock line="290">
+          <description>Yes 2x times :value_rgt is correct!</description>
+          <long-description></long-description>
+          <tag name="param" line="290" description="&lt;p&gt;the rgt/lft value&lt;/p&gt;" type="integer" variable="$value">
+            <type>integer</type>
+          </tag>
+          <tag name="return" line="290" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$value</name>
+          <default></default>
+          <type>integer</type>
+        </argument>
+        <inherited_from>\Suchomsky\SqlTree\SqlTree</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Suchomsky\SqlTree" line="302" package="Default">
+        <name>closeConnection</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::closeConnection()</full_name>
+        <docblock line="302">
+          <description>closes the database connection.</description>
+          <long-description></long-description>
+          <tag name="return" line="302" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+        <inherited_from>\Suchomsky\SqlTree\SqlTree</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Suchomsky\SqlTree" line="309" package="Default">
+        <name>__destruct</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::__destruct()</full_name>
+        <docblock line="309">
+          <description>just in case there is an uncommited transaction or open database connection.</description>
+          <long-description></long-description>
+        </docblock>
+        <inherited_from>\Suchomsky\SqlTree\SqlTree</inherited_from>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="16" code="PPC:ERR-50005">No summary for class \Suchomsky\SqlTree\TreeAdapter</error>
+      <error line="17" code="PPC:ERR-50015">Argument $dbCreds is missing from the Docblock of __construct</error>
+      <error line="17" code="PPC:ERR-50015">Argument $columns is missing from the Docblock of __construct</error>
+      <error line="17" code="PPC:ERR-50008">No summary for method __construct()</error>
+      <error line="20" code="PPC:ERR-50015">Argument $name is missing from the Docblock of createRootNode</error>
+      <error line="20" code="PPC:ERR-50008">No summary for method createRootNode()</error>
+      <error line="22" code="PPC:ERR-50008">No summary for method createSubNode()</error>
+      <error line="24" code="PPC:ERR-50008">No summary for method deleteNode()</error>
+      <error line="26" code="PPC:ERR-50008">No summary for method getAllNodes()</error>
+      <error line="28" code="PPC:ERR-50008">No summary for method getChildren()</error>
+      <error line="30" code="PPC:ERR-50008">No summary for method getParent()</error>
+      <error line="32" code="PPC:ERR-50008">No summary for method getParents()</error>
+      <error line="34" code="PPC:ERR-50008">No summary for method getRootNodes()</error>
+      <error line="36" code="PPC:ERR-50008">No summary for method moveTree()</error>
+      <error line="38" code="PPC:ERR-50008">No summary for method pickNode()</error>
+      <error line="40" code="PPC:ERR-50008">No summary for method updateParent()</error>
+    </parse_markers>
+    <source>eJyNkcFqGzEQhs/WU8zBFNs0XieHHjaFJjg0lxBMndJLIWil6UpEK6maUakpefdq10nq0OLtZdn59c1I+vT+QzRRVIuFgAUoJ4lquEuIl1pGxtSnMacYCGtoJCsDMQWFRNa38AY4SU9SsQ0ejPTalbjv+RhULpOuJMuKyzhQwZMlRq92Zb1HLlSIu2Rbw7B++Zut53C2Wp2enK1O38EXbEiZhNZj+QxNMrMJCa7Qe0uwzcqEjh52oIdgSc/BRdtJ65YqdEObswo9IVxvbl7VhjnWVRViqUJOCpchtdXTKlVtdCdPxbJ4guvbz7DJTYngZh+XaZXwskOKUuGfA33dfne9x3MhMv0jP1gfrB9KB/xZROlyvT0Dv8TkW/Z7y/f3vUpOWfFsqpt1Qk1vYaqCy52nec9Ookzoua4PWJjB3zTMz8XkUUzKkzIqRg0v26iEkvFTCHwbNM6m/RWH4cfwbW4G+gio0SHjGNUiXzrXUzSCrY11utx2BNsMRv4LGtvx2clRrgs/sH+6Y0y06mFMRI66eH19evEofgO2BkTg</source>
+  </file>
+  <file path="SqlTree.php" generated-path="SqlTree.html" hash="456f08bd690aa453a8036d32070f34ac" package="Default">
+    <docblock line="0">
+      <description>The SqlTree.php stores the SqlTree class.</description>
+      <long-description></long-description>
+      <tag name="name" line="0" description="SqlTree.php"/>
+      <tag name="copyright" line="0" description="Copyright (C) 2001-2016 Webschreinerei / Suchomsky"/>
+      <tag name="author" line="0" description="Dennis Suchomsky dennis.suchomsky@gmail.com"/>
+      <tag name="link" line="0" description="https://github.com/sushiomsky/SqlTree" link="https://github.com/sushiomsky/SqlTree"/>
+      <tag name="license" line="0" description="GPL3" link="http://opensource.org/licenses/GPL-3.0"/>
+      <tag name="license" line="0" description="GNU Public License" link="http://opensource.org/licenses/gpl-license.php"/>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="PDO">\PDO</namespace-alias>
+    <class final="false" abstract="false" namespace="Suchomsky\SqlTree" line="28" package="Default">
+      <extends/>
+      <name>SqlTree</name>
+      <full_name>\Suchomsky\SqlTree\SqlTree</full_name>
+      <docblock line="28">
+        <description>SqlTree Tree data structure in a SQL Table.</description>
+        <long-description>To create and manage a nested set tree structure in a SQL Database.
+Infinite child nodes possible with linear runtime.
+The objects created have a nodepointer, you navigate either wit the insert functions or with the levelUp().
+Focus: Data/tree consistency</long-description>
+        <tag name="todo" line="28" description="alot.."/>
+        <tag name="package" line="28" description="Default"/>
+      </docblock>
+      <constant namespace="Suchomsky\SqlTree" line="53" package="Default">
+        <name>QUERYS</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::QUERYS</full_name>
+        <value>array('SELECT_WHERE_ID' =&gt; 'SELECT :id, :rgt, :lft, :parent, :name FROM :table WHERE :id=:value_id LIMIT 0,1', 'SELECT_TOP_RGT' =&gt; 'SELECT :rgt FROM :table ORDER BY :rgt DESC LIMIT 0, 1', 'SELECT_COUNT_ENTRIES' =&gt; 'SELECT n.:name, COUNT(*)-1 AS level, ROUND ((n.rgt - n.lft - 1) / 2) AS offspring FROM :table AS n, :table AS p WHERE n.:lft BETWEEN p.:lft AND p.:rgt GROUP BY n.:lft ORDER BY n.:lft;', 'UPDATE_PARENTS_RGT' =&gt; 'UPDATE :table SET :rgt = :rgt +2 WHERE :rgt &gt;= :value_rgt', 'UPDATE_PARENTS_LFT' =&gt; 'UPDATE :table SET :lft = :lft +2 WHERE :lft &gt; :value_rgt', 'INSERT_NODE' =&gt; 'INSERT INTO :table (:lft, :rgt, :parent, :name) VALUES(:value_lft, :value_rgt, :value_parent, :value_name)')</value>
+        <docblock line="53">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="53" description="&lt;p&gt;QUERYS Sql querys nescessary to manage the tree structure&lt;/p&gt;" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </constant>
+      <constant namespace="Suchomsky\SqlTree" line="65" package="Default">
+        <name>COLUMNS</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::COLUMNS</full_name>
+        <value>array('table' =&gt; 'nested_set', 'id' =&gt; 'id', 'lft' =&gt; 'lft', 'rgt' =&gt; 'rgt', 'parent' =&gt; 'parent')</value>
+        <docblock line="65">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="65" description="&lt;p&gt;default table and column names.&lt;/p&gt;" type="array&lt;mixed,mixed&gt;" variable="">
+            <type>array&lt;mixed,mixed&gt;</type>
+          </tag>
+        </docblock>
+      </constant>
+      <constant namespace="Suchomsky\SqlTree" line="75" package="Default">
+        <name>DB_CREDS</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::DB_CREDS</full_name>
+        <value>array('host' =&gt; 'localhost', 'db' =&gt; 'sqltree', 'user' =&gt; 'root', 'password' =&gt; '1234')</value>
+        <docblock line="75">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="75" description="&lt;p&gt;default database credentials.&lt;/p&gt;" type="array&lt;mixed,mixed&gt;" variable="">
+            <type>array&lt;mixed,mixed&gt;</type>
+          </tag>
+        </docblock>
+      </constant>
+      <property static="false" visibility="private" namespace="Suchomsky\SqlTree" line="33" package="Default">
+        <name>$pdo</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::pdo</full_name>
+        <default>null</default>
+        <docblock line="33">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="33" description="&lt;p&gt;PDO database connection object&lt;/p&gt;" type="\PDO|null" variable="">
+            <type>\PDO</type>
+            <type>null</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Suchomsky\SqlTree" line="38" package="Default">
+        <name>$statements</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::statements</full_name>
+        <default>null</default>
+        <docblock line="38">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="38" description="&lt;p&gt;pdo prepared statements&lt;/p&gt;" type="array|null" variable="">
+            <type>array</type>
+            <type>null</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Suchomsky\SqlTree" line="43" package="Default">
+        <name>$nodePointer</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::nodePointer</full_name>
+        <default>null</default>
+        <docblock line="43">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="43" description="&lt;p&gt;stack of node id's last element is the id of the last node inserted&lt;/p&gt;" type="array|null" variable="">
+            <type>array</type>
+            <type>null</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Suchomsky\SqlTree" line="48" package="Default">
+        <name>$errors</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::errors</full_name>
+        <default>null</default>
+        <docblock line="48">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="48" description="&lt;p&gt;error messages&lt;/p&gt;" type="array|null" variable="">
+            <type>array</type>
+            <type>null</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Suchomsky\SqlTree" line="87" package="Default">
+        <name>__construct</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::__construct()</full_name>
+        <docblock line="87">
+          <description>Validation of database/pdo object &amp; table columns closes connection on error</description>
+          <long-description></long-description>
+          <tag name="param" line="87" description="" type="\PDO" variable="$pdo">
+            <type>\PDO</type>
+          </tag>
+          <tag name="param" line="87" description="" type="array|null" variable="$columns">
+            <type>array</type>
+            <type>null</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="true">
+          <name>$pdo</name>
+          <default></default>
+          <type>\PDO</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$columns</name>
+          <default>null</default>
+          <type>array|null</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Suchomsky\SqlTree" line="107" package="Default">
+        <name>connectDb</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::connectDb()</full_name>
+        <docblock line="107">
+          <description>Connects to the database and creates a \PDO object nescessary for the constructor</description>
+          <long-description></long-description>
+          <tag name="param" line="107" description="" type="\Suchomsky\SqlTree\unknown|null" variable="$dbCreds">
+            <type>\Suchomsky\SqlTree\unknown</type>
+            <type>null</type>
+          </tag>
+          <tag name="return" line="107" description="" type="NULL|\PDO">
+            <type>NULL</type>
+            <type>\PDO</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$dbCreds</name>
+          <default>null</default>
+          <type>\Suchomsky\SqlTree\unknown|null</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Suchomsky\SqlTree" line="126" package="Default">
+        <name>getNodeById</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::getNodeById()</full_name>
+        <docblock line="126">
+          <description>Get a node by id</description>
+          <long-description></long-description>
+          <tag name="param" line="126" description="&lt;p&gt;sql table row id&lt;/p&gt;" type="integer" variable="$id">
+            <type>integer</type>
+          </tag>
+          <tag name="return" line="126" description="" type="array&lt;mixed,mixed&gt;">
+            <type>array&lt;mixed,mixed&gt;</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$id</name>
+          <default></default>
+          <type>integer</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Suchomsky\SqlTree" line="135" package="Default">
+        <name>getTree</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::getTree()</full_name>
+        <docblock line="135">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Suchomsky\SqlTree" line="145" package="Default">
+        <name>getErrors</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::getErrors()</full_name>
+        <docblock line="145">
+          <description>Returns an array with error messages.</description>
+          <long-description></long-description>
+          <tag name="return" line="145" description="" type="array&lt;mixed,mixed&gt;">
+            <type>array&lt;mixed,mixed&gt;</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Suchomsky\SqlTree" line="155" package="Default">
+        <name>insertNode</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::insertNode()</full_name>
+        <docblock line="155">
+          <description>Add a node at current position at the same level as current node.</description>
+          <long-description></long-description>
+          <tag name="param" line="155" description="&lt;p&gt;Nodename&lt;/p&gt;" type="string" variable="$name">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="155" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$name</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Suchomsky\SqlTree" line="173" package="Default">
+        <name>insertSubNode</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::insertSubNode()</full_name>
+        <docblock line="173">
+          <description>Add a Subnode at current position.</description>
+          <long-description></long-description>
+          <tag name="param" line="173" description="&lt;p&gt;Nodename&lt;/p&gt;" type="string" variable="$name">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="173" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$name</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Suchomsky\SqlTree" line="191" package="Default">
+        <name>insertRootNode</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::insertRootNode()</full_name>
+        <docblock line="191">
+          <description>Add a root node</description>
+          <long-description></long-description>
+          <tag name="param" line="191" description="&lt;p&gt;Nodename&lt;/p&gt;" type="string" variable="$name">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="191" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$name</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Suchomsky\SqlTree" line="209" package="Default">
+        <name>validateTree</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::validateTree()</full_name>
+        <docblock line="209">
+          <description>Validates the table tree structure and commits/rolls back the transaction</description>
+          <long-description></long-description>
+          <tag name="return" line="209" description="" type="boolean">
+            <type>boolean</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Suchomsky\SqlTree" line="224" package="Default">
+        <name>levelUp</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::levelUp()</full_name>
+        <docblock line="224">
+          <description>puts the cursor a level higher.</description>
+          <long-description></long-description>
+          <tag name="return" line="224" description="" type="boolean">
+            <type>boolean</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Suchomsky\SqlTree" line="233" package="Default">
+        <name>transactionHandler</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::transactionHandler()</full_name>
+        <docblock line="233">
+          <description>commit/rollback the transaction.</description>
+          <long-description></long-description>
+          <tag name="return" line="233" description="" type="boolean">
+            <type>boolean</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Suchomsky\SqlTree" line="250" package="Default">
+        <name>prepareStatements</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::prepareStatements()</full_name>
+        <docblock line="250">
+          <description>prepares pdo statements and bind static params such as tablename and column names.</description>
+          <long-description></long-description>
+          <tag name="return" line="250" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Suchomsky\SqlTree" line="278" package="Default">
+        <name>selectRgtOrderDesc</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::selectRgtOrderDesc()</full_name>
+        <docblock line="278">
+          <description></description>
+          <long-description></long-description>
+          <tag name="return" line="278" description="$columns['rgt'] highest rgt field in table." type="integer">
+            <type>integer</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Suchomsky\SqlTree" line="290" package="Default">
+        <name>updateWhereLftRgtHigherEqual</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::updateWhereLftRgtHigherEqual()</full_name>
+        <docblock line="290">
+          <description>Yes 2x times :value_rgt is correct!</description>
+          <long-description></long-description>
+          <tag name="param" line="290" description="&lt;p&gt;the rgt/lft value&lt;/p&gt;" type="integer" variable="$value">
+            <type>integer</type>
+          </tag>
+          <tag name="return" line="290" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$value</name>
+          <default></default>
+          <type>integer</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Suchomsky\SqlTree" line="302" package="Default">
+        <name>closeConnection</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::closeConnection()</full_name>
+        <docblock line="302">
+          <description>closes the database connection.</description>
+          <long-description></long-description>
+          <tag name="return" line="302" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Suchomsky\SqlTree" line="309" package="Default">
+        <name>__destruct</name>
+        <full_name>\Suchomsky\SqlTree\SqlTree::__destruct()</full_name>
+        <docblock line="309">
+          <description>just in case there is an uncommited transaction or open database connection.</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+    </class>
+    <markers>
+      <todo line="28">alot..</todo>
+    </markers>
+    <parse_markers>
+      <error line="135" code="PPC:ERR-50008">No summary for method getTree()</error>
+      <error line="278" code="PPC:ERR-50008">No summary for method selectRgtOrderDesc()</error>
+    </parse_markers>
+    <source>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</source>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <package name="global" full_name="global"/>
+  <namespace name="Suchomsky" full_name="Suchomsky">
+    <namespace name="SqlTree" full_name="Suchomsky\SqlTree"/>
+  </namespace>
+  <deprecated count="0"/>
+</project>
