@@ -38,11 +38,6 @@ class SqlTree {
 	private $statements = null;
 
 	/**
-	 * @var array|null stack of node id's last element is the id of the last node inserted
-	 */
-	private $nodePointer = null;
-
-	/**
 	 * @var array|null error messages
 	 */
 	private $errors = null;
@@ -149,59 +144,28 @@ class SqlTree {
 	}
 
 	/**
-	 * Add a node at current position at the same level as current node.
-	 *
-	 * @param string $name Nodename
-	 * @return void
+	 * Add a node position is specified by $id.
+	 * 
+	 * @param unknown $name The node name.
+	 * @param number $id The id of the parent node.
+	 * @return string
 	 */
-	public function insertNode($name){
-		$neighbour = $this->getNodeById($this->nodePointer[count($this->nodePointer) - 1]);
-		$this->updateWhereLftRgtHigherEqual($neighbour[$this->columns['rgt']]);
-
-		$this->statements['insert_node']->bindValue( ':value_lft', $neighbour[$this->columns['rgt']] + 1, PDO::PARAM_INT );
-		$this->statements['insert_node']->bindValue( ':value_rgt', $neighbour[$this->columns['rgt']] + 2, PDO::PARAM_INT );
-		$this->statements['insert_node']->bindParam( ':value_name', $name, PDO::PARAM_STR );
-		$this->statements['insert_node']->bindValue( ':value_parent', $neighbour[$this->columns['parent']], PDO::PARAM_INT );
-		$this->statements['insert_node']->execute ();
-		$this->nodePointer[] = $this->pdo->lastInsertId ();
-	}
-
-	/**
-	 * Add a Subnode at current position.
-	 *
-	 * @param string $name Nodename
-	 * @return void
-	 */
-	public function insertSubNode($name){
-		$parent = $this->getNodeById($this->nodePointer[count($this->nodePointer) - 1]);
-		$this->updateWhereLftRgtHigherEqual($parent[$this->columns['rgt']]);
-
-		$this->statements['insert_node']->bindValue( ':value_lft', $parent[$this->columns['rgt']], PDO::PARAM_INT );
-		$this->statements['insert_node']->bindValue( ':value_rgt', $parent[$this->columns['rgt']] + 1, PDO::PARAM_INT );
-		$this->statements['insert_node']->bindParam( ':value_name', $name, PDO::PARAM_STR );
-		$this->statements['insert_node']->bindValue( ':value_parent', $parent[$this->columns['parent']], PDO::PARAM_INT );
-		$this->statements['insert_node']->execute ();
-		$this->nodePointer[] = $this->pdo->lastInsertId ();
-	}
-
-	/**
-	 * Add a root node
-	 *
-	 * @param string $name Nodename
-	 * @return void
-	 */
-	public function insertRootNode($name){
-		$this->nodePointer = null;
-		$rgt = $this->selectRgtOrderDesc();
-		$left = $rgt + 1;
-		$right = $rgt + 2;
-		$this->statements['insert_node']->bindValue ( ':value_lft', $rgt + 1, PDO::PARAM_INT );
+	public function addNode($name, $id = 0){
+	    if ($id<=0) {
+    	    $rgt = $this->selectRgtOrderDesc();
+	    }elseif ($id>0){
+	        $parent = $this->getNodeById($id);
+	        $rgt = $parent[$this->columns['rgt']];
+	        $this->updateWhereLftRgtHigherEqual($rgt);
+	    }
+    	$this->statements['insert_node']->bindValue ( ':value_lft', $rgt + 1, PDO::PARAM_INT );
 		$this->statements['insert_node']->bindValue ( ':value_rgt', $rgt + 2, PDO::PARAM_INT );
 		$this->statements['insert_node']->bindValue ( ':value_name', $name, PDO::PARAM_STR );
 		$this->statements['insert_node']->bindValue ( ':value_parent', 0, PDO::PARAM_INT );
 		$this->statements['insert_node']->execute ();
-		$this->nodePointer[] = $this->pdo->lastInsertId('id');
+		return $this->pdo->lastInsertId('id');
 	}
+
 
 	/**
 	 * Validates the table tree structure and commits/rolls back the transaction
