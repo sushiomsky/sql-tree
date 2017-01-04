@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL);
 use Suchomsky\SqlTree\XmlTree;
 use Suchomsky\SqlTree\SqlTree;
 

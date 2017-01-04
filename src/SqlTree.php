@@ -23,7 +23,7 @@ use PDO;
  * The objects created have a nodepointer, you navigate either wit the insert functions or with the levelUp().
  * Focus: Data/tree consistency
  *
- * @todo alot..
+ * @todo I think there is a inf loop when the table is empty...
  */
 class SqlTree {
 
@@ -51,12 +51,12 @@ class SqlTree {
 	 * @var array QUERYS Sql querys nescessary to manage the tree structure
 	 */
 	const QUERYS = [
-			'SELECT_WHERE_ID' => 'SELECT :id, :rgt, :lft, :parent, :name FROM :table WHERE :id=:value_id LIMIT 0,1',
-			'SELECT_TOP_RGT' => 'SELECT :rgt FROM :table ORDER BY :rgt DESC LIMIT 0, 1',
-	        'SELECT_COUNT_ENTRIES' => 'SELECT n.:name, COUNT(*)-1 AS level, ROUND ((n.rgt - n.lft - 1) / 2) AS offspring FROM :table AS n, :table AS p WHERE n.:lft BETWEEN p.:lft AND p.:rgt GROUP BY n.:lft ORDER BY n.:lft;',
-	        'UPDATE_PARENTS_RGT' => 'UPDATE :table SET :rgt = :rgt +2 WHERE :rgt >= :value_rgt',
-			'UPDATE_PARENTS_LFT' => 'UPDATE :table SET :lft = :lft +2 WHERE :lft > :value_rgt',
-			'INSERT_NODE' => 'INSERT INTO :table (:lft, :rgt, :parent, :name) VALUES(:value_lft, :value_rgt, :value_parent, :value_name)',
+			'SELECT_WHERE_ID'         => 'SELECT id , rgt, lft, parent, name FROM `nested_set` WHERE id=:value_id LIMIT 1',
+			'SELECT_TOP_RGT'          => 'SELECT rgt FROM `nested_set` WHERE 1 ORDER BY rgt DESC LIMIT 1',
+	        'SELECT_COUNT_ENTRIES'    => 'SELECT n.name, COUNT(*)-1 AS level, ROUND ((n.rgt - n.lft - 1) / 2) AS offspring FROM `nested_set` AS n, `nested_set` AS p WHERE n.lft BETWEEN p.lft AND p.rgt GROUP BY n.lft ORDER BY n.lft;',
+	        'UPDATE_PARENTS_RGT'      => 'UPDATE `nested_set` SET rgt = rgt +2 WHERE rgt >= :value_rgt',
+			'UPDATE_PARENTS_LFT'      => 'UPDATE `nested_set` SET lft = lft +2 WHERE lft > :value_rgt',
+			'INSERT_NODE'             => 'INSERT INTO `nested_set` (lft , rgt , parent , name) VALUES( :value_lft , :value_rgt , :value_parent , :value_name )',
 	];
 
 	/**
@@ -67,7 +67,8 @@ class SqlTree {
 			'id' => 'id',
 			'lft' => 'lft',
 			'rgt' => 'rgt',
-			'parent' => 'parent'];
+			'parent' => 'parent',
+			'name' => 'name'];
 
 	/**
 	 * @var mixed[] default database credentials.
@@ -90,6 +91,7 @@ class SqlTree {
 		}
 		try {
 			$this->pdo = $pdo;
+			$this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$this->prepareStatements();
 			$this->pdo->beginTransaction();
 		} catch (PDOException $e) {
@@ -195,10 +197,10 @@ class SqlTree {
 		$right = $rgt + 2;
 		$this->statements['insert_node']->bindValue ( ':value_lft', $rgt + 1, PDO::PARAM_INT );
 		$this->statements['insert_node']->bindValue ( ':value_rgt', $rgt + 2, PDO::PARAM_INT );
-		$this->statements['insert_node']->bindParam ( ':value_name', $name, PDO::PARAM_STR );
+		$this->statements['insert_node']->bindValue ( ':value_name', $name, PDO::PARAM_STR );
 		$this->statements['insert_node']->bindValue ( ':value_parent', 0, PDO::PARAM_INT );
 		$this->statements['insert_node']->execute ();
-		$this->nodePointer[] = $this->pdo->lastInsertId ();
+		$this->nodePointer[] = $this->pdo->lastInsertId('id');
 	}
 
 	/**
@@ -233,7 +235,7 @@ class SqlTree {
 	private function transactionHandler(){
 	    if (count($this->errors) > 0 && $this->pdo->inTransaction()) {
 	       $this->pdo->rollBack();
-	       $this->closeConnection();
+	       foreach ($errors as $error){echo $error;}
 	       return false;
 	    }
 		if ($this->pdo->inTransaction()) {
@@ -252,23 +254,6 @@ class SqlTree {
 		foreach ($keys as $key) {
 			$loKey = strtolower ( $key );
 			$this->statements[$loKey] = $this->pdo->prepare ( self::QUERYS[$key] );
-
-			$this->statements[$loKey]->bindParam(':table', $this->columns['table']);
-			if (strpos(self::QUERYS[$key], ':id') !== false) {
-				$this->statements[$loKey]->bindParam(':id', $this->columns['id']);
-			}
-			if (strpos(self::QUERYS[$key], ':lft') !== false) {
-				$this->statements[$loKey]->bindParam(':lft', $this->columns['lft']);
-			}
-			if (strpos(self::QUERYS[$key], ':rgt') !== false) {
-				$this->statements[$loKey]->bindParam(':rgt', $this->columns['rgt']);
-			}
-			if (strpos(self::QUERYS[$key], ':parent') !== false) {
-				$this->statements[$loKey]->bindParam(':parent', $this->columns['parent']);
-			}
-			if (strpos(self::QUERYS[$key], ':name') !== false) {
-				$this->statements[$loKey]->bindParam(':name', $this->columns['name']);
-			}
 		}
 	}
 
@@ -300,6 +285,7 @@ class SqlTree {
 	 * @return void
 	 */
 	private function closeConnection() {
+	    $this->transactionHandler();
 		$this->pdo = null;
 	}
 
