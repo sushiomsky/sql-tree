@@ -20,40 +20,60 @@ use PDO;
  *
  * To create and manage a nested set tree structure in a SQL Database.
  * Infinite child nodes possible with linear runtime.
- * The objects created have a nodepointer, you navigate either wit the insert functions or with the levelUp().
  * Focus: Data/tree consistency
  *
  * @todo I think there is a inf loop when the table is empty...
+ * @todo every public & protected function should be tested with random data in random execution order
+ * @todo data structure verification
  */
-class SqlTree {
+class SqlTree extends SqlDB{
 
-	/**
-	 * @var \PDO|null PDO database connection object
-	 */
-	private $pdo = null;
-
-	/**
-	 * @var array|null pdo prepared statements
-	 */
-	private $statements = null;
-
-	/**
-	 * @var array|null error messages
-	 */
-	private $errors = null;
-
+	
 	/**
 	 * @var array QUERYS Sql querys nescessary to manage the tree structure
 	 */
 	const QUERYS = [
-			'SELECT_WHERE_ID'         => 'SELECT id , rgt, lft, parent, name FROM `nested_set` WHERE id=:value_id LIMIT 1',
-			'SELECT_TOP_RGT'          => 'SELECT rgt FROM `nested_set` WHERE 1 ORDER BY rgt DESC LIMIT 1',
-	        'SELECT_COUNT_ENTRIES'    => 'SELECT n.name, COUNT(*)-1 AS level, ROUND ((n.rgt - n.lft - 1) / 2) AS offspring FROM `nested_set` AS n, `nested_set` AS p WHERE n.lft BETWEEN p.lft AND p.rgt GROUP BY n.lft ORDER BY n.lft;',
-	        'UPDATE_PARENTS_RGT'      => 'UPDATE `nested_set` SET rgt = rgt +2 WHERE rgt >= :value_rgt',
-			'UPDATE_PARENTS_LFT'      => 'UPDATE `nested_set` SET lft = lft +2 WHERE lft > :value_rgt',
-			'INSERT_NODE'             => 'INSERT INTO `nested_set` (lft , rgt , parent , name) VALUES( :value_lft , :value_rgt , :value_parent , :value_name )',
-	];
+			'DELETE_NODE'             => 'DELETE
+	                                      FROM `nested_set` 
+	                                      WHERE id=:value_id;',
 
+	        'SELECT_WHERE_ID'         => 'SELECT id , rgt, lft, parent, name
+	                                      FROM `nested_set`
+	                                      WHERE id=:value_id
+	                                      LIMIT 1;',
+	    	                                       
+			'SELECT_TOP_RGT'          => 'SELECT rgt FROM `nested_set`
+	                                      WHERE 1 
+	                                      ORDER BY rgt DESC 
+	                                      LIMIT 1;',
+	    
+	        'SELECT_COUNT_ENTRIES'    => 'SELECT name, 
+	                                      COUNT(*) AS entries
+	                                      FROM `nested_set`',
+	    
+	        'SELECT_CHILD_NODES'      => 'SELECT o.name,
+                                    	  COUNT(p.id)-1 AS level
+                                    	  FROM `nested_set` AS n,
+                                    	  `nested_set` AS p,
+                                    	  `nested_set` AS o
+                                    	  WHERE o.lft BETWEEN p.lft AND p.rgt
+                                    	  AND o.lft BETWEEN n.lft AND n.rgt
+                                    	  AND n.id = 2
+                                    	  GROUP BY o.lft
+                                    	  ORDER BY o.lft;',
+	                	                           
+	        'UPDATE_RGT_BEFORE_INSERT'    => 'UPDATE `nested_set` 
+	                                      SET rgt = rgt +2
+	                                      WHERE rgt >= :value_rgt;',
+	    
+	        'UPDATE_LFT_BEFORE_INSERT'    => 'UPDATE `nested_set`
+	                                      SET lft = lft +2
+	                                      WHERE lft > :value_rgt;',
+	    	                                       
+			'INSERT_NODE'             => 'INSERT INTO `nested_set` (lft , rgt , parent , name) 
+	                                      VALUES( :value_lft , :value_rgt , :value_parent , :value_name )',
+	];
+	
 	/**
 	 * @var mixed[] default table and column names.
 	 */
@@ -65,84 +85,36 @@ class SqlTree {
 			'parent' => 'parent',
 			'name' => 'name'];
 
-	/**
-	 * @var mixed[] default database credentials.
-	 */
-	const DB_CREDS = [
-	    'host' => 'localhost',
-	    'db' => 'sqltree',
-	    'user' => 'root',
-	    'password' => '1234'];
-
-	/**
-	 * Validation of database/pdo object & table columns closes connection on error
-	 *
-	 * @param \PDO $pdo
-	 * @param array|null $columns
-	 */
-	public function __construct(&$pdo, $columns = null) {
-		if ($columns == null) {
-			$this->columns = self::COLUMNS;
-		}
-		try {
-			$this->pdo = $pdo;
-			$this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$this->prepareStatements();
-			$this->pdo->beginTransaction();
-		} catch (PDOException $e) {
-			$this->errors[] = $e->getMessage ();
-			$this->closeConnection ();
-		}
+	function __construct(&$pdo){
+	    parent::__construct($pdo);
+	    $this->prepareStatements(SqlTree::QUERYS);   
 	}
-
 	/**
-	 * Connects to the database and creates a \PDO object nescessary for the constructor
-	 *
-	 * @param unknown|null $dbCreds
-	 * @return NULL|\PDO
-	 */
-	public static function connectDb($dbCreds = null) {
-	    if ($dbCreds == null) {
-	        $dbCreds = self::DB_CREDS;
-	    }
-		try {
-			$pdo = new PDO( 'mysql:host=' . $dbCreds['host'] . ';dbname=' . $dbCreds['db'], $dbCreds['user'], $dbCreds['password'] );
-		} catch (\PDOException $e) {
-		    echo $e->getMessage();
-			$pdo = null;
-		}
-		return $pdo;
-	}
-
-	/**
-	 * Get a node by id
+	 * Get a node by id.
 	 *
 	 * @param int $id sql table row id
 	 * @return mixed[]
 	 */
-	public function getNodeById($id){
-	    $this->statements['select_where_id']->bindParam(':value_id', $id);
-	    $this->statements['select_where_id']->execute();
-	    return $this->statements['select_where_id']->fetch ( PDO::FETCH_ASSOC );
+	public function getNode($id){
+	    $this->statements['select_where_id']->bindValue(':value_id', $id);
+	    return $this->executeSelectStatement('select_where_id');
 	}
 
 	/**
-	 *
+	 * Get Node and childnodes below $id.
+	 * 
+	 * @param int $id id of the node
 	 */
-	public function getTree(){
-	    $this->statements['select_tree']->execute();
-		return $this->statements['select_tree']->fetchAll( PDO::FETCH_ASSOC );
+	public function getChildNodes($id){
+	    $this->statements['select_child_nodes']->bindParam(':value_id', $id);
+	    $this->executeStatement('select_child_nodes');
+	    if ($this->statements['select_where_id']->rowCount > 0) {
+	       return $this->statements['select_child_nodes']->fetchAll ( PDO::FETCH_ASSOC );
+	    }else {
+	       return false;
+	    }
 	}
-
-	/**
-	 * Returns an array with error messages.
-	 *
-	 * @return mixed[]
-	 */
-	public function getErrors(){
-	    return $this->errors;
-	}
-
+	
 	/**
 	 * Add a node position is specified by $id.
 	 * 
@@ -150,114 +122,80 @@ class SqlTree {
 	 * @param number $id The id of the parent node.
 	 * @return string
 	 */
-	public function addNode($name, $id = 0){
-	    if ($id<=0) {
-    	    $rgt = $this->selectRgtOrderDesc();
-	    }elseif ($id>0){
-	        $parent = $this->getNodeById($id);
-	        $rgt = $parent[$this->columns['rgt']];
-	        $this->updateWhereLftRgtHigherEqual($rgt);
-	    }
+	public function addRootNode($name){
+	    $rgt = $this->selectRgtOrderDesc();
     	$this->statements['insert_node']->bindValue ( ':value_lft', $rgt + 1, PDO::PARAM_INT );
 		$this->statements['insert_node']->bindValue ( ':value_rgt', $rgt + 2, PDO::PARAM_INT );
 		$this->statements['insert_node']->bindValue ( ':value_name', $name, PDO::PARAM_STR );
 		$this->statements['insert_node']->bindValue ( ':value_parent', 0, PDO::PARAM_INT );
-		$this->statements['insert_node']->execute ();
+		$this->executeStatement('insert_node');
 		return $this->pdo->lastInsertId('id');
 	}
 
-
 	/**
-	 * Validates the table tree structure and commits/rolls back the transaction
+	 * Add a node position is specified by $id.
+	 *
+	 * @param unknown $name The node name.
+	 * @param number $id The id of the parent node.
+	 * @return string
+	 */
+	public function addNode($name, $id){
+        $parent = $this->getNode($id);
+        if ($parent[0][SqlTree::COLUMNS['id']] == $id) {
+            $rgt = $parent[0][SqlTree::COLUMNS['rgt']];
+            $this->statements['insert_node']->bindValue ( ':value_lft', $rgt, PDO::PARAM_INT );
+    	    $this->statements['insert_node']->bindValue ( ':value_rgt', $rgt + 1, PDO::PARAM_INT );
+    	    $this->statements['insert_node']->bindValue ( ':value_name', $name, PDO::PARAM_STR );
+    	    $this->statements['insert_node']->bindValue ( ':value_parent', $id, PDO::PARAM_INT );
+		    $this->executeStatement('insert_node');
+    	    $id = $this->pdo->lastInsertId('id');
+    	    $this->updateBeforeInsert($rgt);
+    	    return $id;
+        }else {
+            return false;
+        }
+	}
+	
+	/**
+	 * Validates the table tree structure.
 	 *
 	 * @return bool
 	 */
 	public function validateTree(){
-	    $this->statements['select_count_entries']->execute();
-	    $entries = $this->statements['select_count_entries']->fetch ( PDO::FETCH_ASSOC );
-	    if ((round($this->selectRgtOrderDesc() / 2)) == $entries['entries']){
-	        return true;
+	    $this->executeStatement('select_count_entries');
+	    $entries = $this->statements['select_count_entries']->fetchAll ( PDO::FETCH_ASSOC );
+	    if ((round($this->selectRgtOrderDesc() / 2)) == $entries[0]['entries']){
+	            return true;
+	    }else {
+    	   return false;
 	    }
-
-		return false;
 	}
 
 	/**
-	 * puts the cursor a level higher.
-	 *
-	 * @return bool
+	 * Returns the right most root node
+	 * 
+	 * @return int $columns['rgt'] highest rgt field in table.
 	 */
-	public function levelUp(){
-	    array_pop($this->nodePointer);
-	}
-
-	/**
-	 * commit/rollback the transaction.
-	 *
-	 * @return bool
-	 */
-	private function transactionHandler(){
-	    if (count($this->errors) > 0 && $this->pdo->inTransaction()) {
-	       $this->pdo->rollBack();
-	       foreach ($errors as $error){echo $error;}
-	       return false;
-	    }
-		if ($this->pdo->inTransaction()) {
-	        $this->pdo->commit();
-	    }
-	    return true;
-	}
-
-	/**
-	 * prepares pdo statements and bind static params such as tablename and column names.
-	 *
-	 * @return void
-	 */
-	private function prepareStatements() {
-		$keys = array_keys ( self::QUERYS );
-		foreach ($keys as $key) {
-			$loKey = strtolower ( $key );
-			$this->statements[$loKey] = $this->pdo->prepare ( self::QUERYS[$key] );
+	private function selectRgtOrderDesc() {
+		$this->executeStatement('select_top_rgt');
+		$result = $this->statements['select_top_rgt']->fetchAll ( PDO::FETCH_ASSOC );
+		if ($this->statements['select_top_rgt']->rowCount() > 0) {
+    		return $result[0][SqlTree::COLUMNS['rgt']];
+		}else {
+		    return 0;
 		}
 	}
 
 	/**
-	 * @return int $columns['rgt'] highest rgt field in table.
-	 */
-	private function selectRgtOrderDesc() {
-		$this->statements['select_top_rgt']->execute();
-		$result = $this->statements['select_top_rgt']->fetch ( PDO::FETCH_ASSOC );
-		return $result[$this->columns['rgt']];
-	}
-
-	/**
-	 * Yes 2x times :value_rgt is correct!
+	 * Updates the Tree lft/rgt after an insert.
 	 *
 	 * @param int $value the rgt/lft value
 	 * @return void
 	 */
-	private function updateWhereLftRgtHigherEqual($value){
-		$this->statements['update_parents_lft']->bindValue(':value_rgt', $value);
-		$this->statements['update_parents_lft']->execute();
-		$this->statements['update_parents_rgt']->bindValue(':value_rgt', $value);
-		$this->statements['update_parents_rgt']->execute();
+	private function updateBeforeInsert($value){
+		$this->statements['update_rgt_before_insert']->bindValue(':value_rgt', $value);
+		$this->executeStatement('update_rgt_before_insert');
+		$this->statements['update_lft_before_insert']->bindValue(':value_rgt', $value);
+		$this->executeStatement('update_lft_before_insert');
 	}
-
-	/**
-	 * closes the database connection.
-	 *
-	 * @return void
-	 */
-	private function closeConnection() {
-	    $this->transactionHandler();
-		$this->pdo = null;
-	}
-
-	/**
-	 * just in case there is an uncommited transaction or open database connection.
-	 */
-	function __destruct(){
-	    $this->closeConnection();
-	}
-
 }

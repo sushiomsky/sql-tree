@@ -6,9 +6,10 @@
 	stopOnFailure="true" syntaxCheck="false">
 	<php>
         <var name="DB_DSN" value="mysql:dbname=sqltree;host=localhost" />
+        <var name="DB_HOST" value="localhost" />
         <var name="DB_USER" value="root" />
-        <var name="DB_PASSWD" value="1234" />
-        <var name="DB_DBNAME" value="sqltree" />
+        <var name="DB_PASSWORD" value="1234" />
+        <var name="DB_NAME" value="sqltree" />
     </php>
 	<testsuites>
 		<testsuite name="SqlTree Test Suite">

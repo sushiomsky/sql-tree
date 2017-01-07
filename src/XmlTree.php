@@ -1,7 +1,7 @@
 <?php
 /**
  * class: XmlTree
- * purpose: import an xml structure into a sql NestedSet structure
+ * purpose: import an xml structure into a sql NestedSet tree structure
  * Focus: Data/tree consistency
  *
  * @copyright Copyright (C) 2001-2016 Webschreinerei
@@ -35,31 +35,29 @@ class XmlTree extends SqlTree {
 		$this->xmlReader = $xmlUrl;
 		$this->xmlReader = new XmlReader();
 		$this->xmlReader->open($xmlUrl);
-
 		$this->processElements();
 	}
 
 	private function processElements(){
 		$depth = 0;
+		$ids[] = 0;
 		while ($this->xmlReader->read()) {
 			switch($this->xmlReader->nodeType){
-
 				case (XMLReader::END_ELEMENT):
-					$this->levelUp();
 					$depth--;
-	    break;
+	            break;
 
 				case (XMLREADER::ELEMENT):
 					if ($depth == 0) {
-						$this->insertRootNode($this->xmlReader->name);
+						$ids[] = $this->addRootNode($this->xmlReader->name);
 					}else {
-						$this->insertSubNode($this->xmlReader->name);
+						$ids[] = $this->addNode($this->xmlReader->name, $ids[$depth]);
 					}
 					$depth++;
-	    break;
+	        break;
 
 				case (XMLREADER::TEXT):
-					$this->insertSubNode($this->xmlReader->value);
+					$this->addNode($this->xmlReader->value,$ids[$depth]);
 	    break;
 			}
 		}
